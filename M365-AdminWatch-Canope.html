@@ -557,39 +557,66 @@ function fmtDate(s) {
 }
 
 // ═══════════════════════════════════════════════
-// FETCH AVEC TIMEOUT ROBUSTE
+// FETCH RAPIDE — CACHE + PARALLÈLE
 // ═══════════════════════════════════════════════
+const IS_FILE_PROTO = location.protocol === 'file:';
+const CACHE_KEY = 'adminwatch_cache';
+const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
+
+// Proxies ordonnés par fiabilité — le premier qui répond gagne
 const PROXIES = [
-  u=>`https://api.allorigins.win/get?url=${encodeURIComponent(u)}`,   // JSON {contents}
-  u=>`https://corsproxy.io/?${encodeURIComponent(u)}`,                 // XML direct
-  u=>`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`, // XML direct
-  u=>`https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`, // XML direct
-  u=>`https://cors-anywhere.herokuapp.com/${u}`,                        // XML direct
-  u=>`https://proxy.cors.sh/${u}`,                                      // XML direct
+  { fn: u=>`https://api.allorigins.win/get?url=${encodeURIComponent(u)}`, json:true  },
+  { fn: u=>`https://corsproxy.io/?${encodeURIComponent(u)}`,              json:false },
+  { fn: u=>`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`, json:false },
+  { fn: u=>`https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`,   json:false },
 ];
 
-// Détecter si on est en file:// (ouverture double-clic)
-const IS_FILE_PROTO = location.protocol === 'file:';
+// Cache SessionStorage
+function cacheGet(url) {
+  try {
+    const c = JSON.parse(sessionStorage.getItem(CACHE_KEY)||'{}');
+    const e = c[url];
+    if (e && Date.now()-e.ts < CACHE_TTL) return e.data;
+  } catch(e){}
+  return null;
+}
+function cacheSet(url, data) {
+  try {
+    const c = JSON.parse(sessionStorage.getItem(CACHE_KEY)||'{}');
+    c[url] = {ts:Date.now(), data};
+    // Garder max 30 entrées
+    const keys = Object.keys(c);
+    if (keys.length > 30) delete c[keys[0]];
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify(c));
+  } catch(e){}
+}
 
 function timedFetch(url, ms) {
   return new Promise((ok,ko)=>{
-    const t=setTimeout(()=>ko(new Error("timeout")),ms);
-    fetch(url,{mode:'cors'}).then(r=>{clearTimeout(t);ok(r)}).catch(e=>{clearTimeout(t);ko(e)});
+    const t = setTimeout(()=>ko(new Error("timeout")), ms);
+    fetch(url).then(r=>{clearTimeout(t);ok(r)}).catch(e=>{clearTimeout(t);ko(e)});
   });
 }
 
+// Tente tous les proxies EN PARALLÈLE — retourne le premier qui répond
 async function fetchRSS(url) {
-  // Si file://, on tente quand même mais avec avertissement précoce
-  for (const px of PROXIES) {
-    try {
-      const r = await timedFetch(px(url), 10000);
-      if (!r.ok) continue;
-      const ct = r.headers.get("content-type")||"";
-      let txt = ct.includes("json") ? ((await r.json()).contents||"") : await r.text();
-      if (txt && (txt.includes("<item") || txt.includes("<entry"))) return txt;
-    } catch(e){ continue; }
-  }
-  throw new Error("inaccessible");
+  // Cache d'abord
+  const cached = cacheGet(url);
+  if (cached) return cached;
+
+  // Course entre tous les proxies simultanément
+  const attempts = PROXIES.map(async px => {
+    const r = await timedFetch(px.fn(url), 6000);
+    if (!r.ok) throw new Error('not ok');
+    const txt = px.json ? ((await r.json()).contents||'') : await r.text();
+    if (!txt || (!txt.includes('<item') && !txt.includes('<entry'))) throw new Error('vide');
+    return txt;
+  });
+
+  // Premier succès gagne
+  const txt = await Promise.any(attempts);
+  cacheSet(url, txt);
+  return txt;
 }
 
 // ═══════════════════════════════════════════════
@@ -671,7 +698,7 @@ setInterval(()=>{
 document.getElementById("ts").textContent=new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
 
 // ═══════════════════════════════════════════════
-// SCAN PAR BATCH
+// SCAN PARALLÈLE TOTAL
 // ═══════════════════════════════════════════════
 async function startScan() {
   const btn=document.getElementById("btnScan");
@@ -679,14 +706,8 @@ async function startScan() {
   btn.innerHTML='<span class="spin">⟳</span> Chargement…';
   allNews=[];
   document.getElementById("errBar").className="err-bar";
-
-  // Avertissement précoce si file://
-  if(IS_FILE_PROTO){
-    showErr(`<strong>⚠️ Fichier ouvert en double-clic (file://)</strong> — les proxies CORS peuvent être partiellement bloqués par votre navigateur.<br>
-    <strong>Recommandé :</strong> VS Code → clic droit → <strong>Open with Live Server</strong> pour un chargement complet.<br>
-    <em>Tentative quand même avec les 6 proxies disponibles…</em>`);
-  }
   setProg(4);
+
   const ss=SOURCES.map(s=>({lbl:s.lbl,st:"pending"}));
   drawSteps(ss);
 
@@ -707,38 +728,28 @@ async function startScan() {
     done++;
     setProg(4+Math.floor(done/SOURCES.length*90));
     drawSteps(ss);
+    // Affichage progressif — render dès qu'on a des articles
     if(allNews.length>0){ dedup(); updateCounts(); render(); }
   }
 
-  // Batch de 4
-  for(let i=0;i<SOURCES.length;i+=4){
-    await Promise.allSettled(SOURCES.slice(i,i+4).map((s,j)=>loadOne(s,i+j)));
-  }
+  // TOUS en parallèle simultanément
+  await Promise.allSettled(SOURCES.map((s,i)=>loadOne(s,i)));
 
   dedup(); updateCounts(); render();
   setProg(100);
   setTimeout(()=>{hideProg();hideSteps();},2000);
 
   if(errors===SOURCES.length){
-    const msg = IS_FILE_PROTO
-      ? `<strong>⛔ Fichier ouvert en double-clic (file://)</strong> — le navigateur bloque toutes les requêtes réseau.<br><br>
-         <strong>✅ Solution :</strong> Dans VS Code, faites un clic droit sur le fichier → <strong>"Open with Live Server"</strong> (port 5500).<br>
-         Si Live Server n'est pas installé : <em>Extensions → rechercher "Live Server" → Installer → Clic droit → Open with Live Server.</em>`
-      : `<strong>⚠️ Tous les flux sont inaccessibles.</strong> Les 6 proxies CORS sont indisponibles ou votre réseau bloque les requêtes externes.<br>Réessayez dans quelques instants.`;
-    showErr(msg);
+    showErr(`<strong>⚠️ Tous les flux sont inaccessibles.</strong> Votre réseau bloque peut-être les requêtes externes. Réessayez dans quelques instants.`);
   } else if(errors>0){
-    const msg = IS_FILE_PROTO
-      ? `<strong>⚠️ ${errors} flux indisponibles sur ${SOURCES.length}</strong> — fichier ouvert en <code>file://</code>. Certains proxies ont fonctionné mais d'autres sont bloqués.<br>
-         <strong>Pour tout charger :</strong> ouvrez via VS Code → <strong>Live Server</strong>.`
-      : `ℹ️ <strong>${errors} flux indisponibles sur ${SOURCES.length}</strong> — ${SOURCES.length-errors} sources chargées correctement. Certains proxies CORS sont temporairement saturés, réessayez dans quelques minutes.`;
-    showErr(msg);
+    showErr(`ℹ️ <strong>${errors} flux indisponibles sur ${SOURCES.length}</strong> — ${SOURCES.length-errors} sources chargées. Les proxies CORS publics sont parfois instables.`);
   }
 
   const lo=document.getElementById("lastOk");
   lo.style.display="inline";
   lo.textContent="✓ "+new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
   btn.disabled=false; btn.classList.remove("spinning");
-  btn.innerHTML='<span class="spin">⟳</span> Actualiser les flux';
+  btn.innerHTML='<span class="spin">⟳</span> Actualiser';
   drawSvcCards();
 }
 
@@ -1384,6 +1395,8 @@ function updateActionsBtn() {
 
 // Init
 drawSvcCards();
+// Auto-chargement au démarrage
+window.addEventListener('load', ()=>startScan());
 </script>
 </body>
 </html>
