@@ -8,7 +8,6 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  /* Couleurs Canopé SharePoint */
   --teal:#006b6b;--teal2:#008080;--teal3:#e6f2f2;--teal4:#b3d9d9;
   --bg:#f3f3f3;--s1:#ffffff;--s2:#f8f8f8;--s3:#ededed;
   --b1:#e0e0e0;--b2:#c8d8d8;
@@ -17,31 +16,21 @@
   --topbar-h:48px;--subnav-h:44px;
 }
 html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-family:'Segoe UI',sans-serif;font-size:14px}
-
-/* ── TOPBAR SHAREPOINT STYLE ── */
 .topbar{height:var(--topbar-h);background:#fff;border-bottom:1px solid var(--b1);display:flex;align-items:center;padding:0 0 0 0;gap:0;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,.08)}
-
-/* Logo bloc gauche */
 .brand{display:flex;align-items:center;gap:0;flex-shrink:0;height:100%;padding:0 12px;border-right:1px solid var(--b1)}
 .logo-sq{width:36px;height:36px;background:var(--teal);display:flex;align-items:center;justify-content:center;border-radius:3px;flex-shrink:0}
 .logo-sq svg{width:22px;height:22px;fill:#fff}
 .brand-text{padding:0 12px 0 10px;border-right:1px solid var(--b1)}
 .canope-lbl{font-size:10px;color:var(--mu2);font-weight:400;letter-spacing:.04em;line-height:1.2}
 .canope-name{font-size:15px;font-weight:700;color:var(--teal);letter-spacing:.01em;line-height:1.2}
-
-/* Titre section */
 .topbar-section{padding:0 16px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--b1)}
 .topbar-section .sec-name{font-size:15px;font-weight:600;color:var(--tx)}
 .topbar-section .sec-sub{font-size:11px;color:var(--mu2)}
-
-/* Barre de recherche style SharePoint */
 .top-search{flex:1;display:flex;align-items:center;padding:0 20px}
 .search-sp{display:flex;align-items:center;gap:8px;background:var(--s2);border:1px solid var(--b1);border-radius:2px;padding:6px 12px;width:340px;max-width:100%}
 .search-sp:focus-within{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
 .search-sp input{border:none;background:none;outline:none;font-family:'Segoe UI',sans-serif;font-size:13px;color:var(--tx);width:100%}
 .search-sp input::placeholder{color:var(--mu2)}
-
-/* Actions droite */
 .topbar-right{display:flex;align-items:center;gap:6px;padding:0 14px;flex-shrink:0}
 .ts{font-size:11px;color:var(--mu2)}
 .last-ok{font-size:11px;color:var(--teal);display:none;font-weight:600}
@@ -50,7 +39,6 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 .btn-scan:disabled{opacity:.5;cursor:not-allowed;background:var(--mu2)}
 .spin{display:inline-block}.spinning .spin{animation:rotate 1s linear infinite}
 
-/* ── SOUS-NAVIGATION (onglets SharePoint) ── */
 .subnav{height:var(--subnav-h);background:#fff;border-bottom:2px solid var(--b1);display:flex;align-items:flex-end;padding:0 16px;gap:0;flex-shrink:0}
 .snav-item{padding:0 16px 12px;font-size:14px;font-weight:400;color:var(--mu);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .15s;white-space:nowrap;display:flex;align-items:center;gap:6px}
 .snav-item:hover{color:var(--tx);background:rgba(0,107,107,.04)}
@@ -60,9 +48,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 .snav-cnt.orange{background:#fff4ce;color:#835b00}
 .snav-sep{flex:1}
 
-/* ── LAYOUT ── */
 .layout{display:flex;height:calc(100vh - var(--topbar-h) - var(--subnav-h));overflow:hidden}
-/* ── LEFT NAV style SharePoint ── */
 .left{width:220px;flex-shrink:0;border-right:1px solid var(--b1);overflow-y:auto;background:#fff;padding:8px 0}
 .sec{margin-bottom:6px}
 .sec-lbl{font-size:11px;font-weight:700;color:var(--mu2);padding:10px 16px 4px;text-transform:uppercase;letter-spacing:.06em}
@@ -76,7 +62,6 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 .nav.on .cnt{background:rgba(0,107,107,.12);color:var(--teal)}
 .divider{height:1px;background:var(--b1);margin:6px 16px}
 
-/* ── FEED ── */
 .feed{flex:1;overflow-y:auto;display:flex;flex-direction:column;min-width:0;background:var(--bg)}
 .feed-top{padding:10px 16px;border-bottom:1px solid var(--b1);display:flex;align-items:center;gap:8px;flex-shrink:0;background:#fff;position:sticky;top:0;z-index:10}
 .search-wrap{flex:1;display:flex;align-items:center;gap:8px;background:var(--s2);border:1px solid var(--b1);border-radius:2px;padding:7px 11px}
@@ -97,7 +82,6 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 .err-bar.on{display:block}
 .cards{padding:12px 16px}
 
-/* ── CARD style document SharePoint ── */
 .card{background:#fff;border:1px solid var(--b1);border-radius:3px;padding:12px 16px 11px 20px;margin-bottom:6px;position:relative;overflow:hidden;transition:border-color .15s,box-shadow .15s}
 .card:hover{border-color:var(--teal4);box-shadow:0 2px 8px rgba(0,107,107,.08)}
 .card-stripe{position:absolute;left:0;top:0;bottom:0;width:4px}
@@ -135,7 +119,6 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 .skel-card{background:#fff;border:1px solid var(--b1);border-radius:3px;padding:14px;margin-bottom:6px}
 .skel{background:linear-gradient(90deg,var(--s2) 25%,var(--s3) 50%,var(--s2) 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:2px}
 
-/* ── RIGHT PANEL ── */
 .right{width:260px;flex-shrink:0;border-left:1px solid var(--b1);overflow-y:auto;background:#fff;padding:14px}
 .rp-title{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--mu2);font-weight:700;margin-bottom:9px;padding-bottom:5px;border-bottom:1px solid var(--b1)}
 .stat-box{background:var(--s2);border:1px solid var(--b1);border-radius:3px;padding:11px;margin-bottom:12px}
@@ -156,7 +139,6 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 .svc-upfill{height:100%;border-radius:2px}
 .src-item{display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:2px;margin-bottom:2px;background:var(--s2);border:1px solid var(--b1);font-size:11px;color:var(--mu)}
 
-/* ── MODAL style SharePoint Panel ── */
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:999;align-items:center;justify-content:center}
 .modal-bg.on{display:flex}
 .modal{background:#fff;border:1px solid var(--b1);border-radius:3px;width:520px;max-width:94vw;max-height:85vh;overflow-y:auto;padding:0;position:relative;box-shadow:0 8px 32px rgba(0,0,0,.18)}
@@ -176,7 +158,6 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 .modal-link{display:flex;align-items:center;gap:6px;padding:8px 12px;background:var(--teal3);border:1px solid var(--teal4);border-radius:2px;color:var(--teal);font-size:12px;font-weight:600;text-decoration:none;margin-bottom:5px;transition:all .15s}
 .modal-link:hover{background:var(--teal4)}
 
-/* ── ANIMATIONS ── */
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 @keyframes rotate{to{transform:rotate(360deg)}}
 @keyframes pulse{0%,100%{border-color:var(--teal4)}50%{border-color:var(--teal)}}
@@ -189,11 +170,9 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 </head>
 <body>
 
-<!-- TOPBAR SHAREPOINT -->
 <div class="topbar">
   <div class="brand">
     <div class="logo-sq">
-      <!-- Logo Canopé simplifié -->
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <text x="2" y="18" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="white">C</text>
         <rect x="10" y="4" width="12" height="14" rx="1" fill="none" stroke="white" stroke-width="1.5"/>
@@ -229,7 +208,6 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
   </div>
 </div>
 
-<!-- SOUS-NAVIGATION ONGLETS SHAREPOINT -->
 <div class="subnav">
   <div class="snav-item on" onclick="setFilt(this,'prio','all');setSNav(this)">
     Toutes les actualités <span class="snav-cnt" id="sn-all">0</span>
@@ -246,6 +224,9 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
   <div class="snav-item" onclick="setFilt(this,'cat','fr');setSNav(this)">
     🇫🇷 Presse FR
   </div>
+  <div class="snav-item" onclick="setFilt(this,'cat','tech');setSNav(this)">
+    🌍 Presse EN
+  </div>
   <div class="snav-sep"></div>
   <select class="sort" id="sort" onchange="render()" style="margin:auto 0;height:30px;font-size:12px">
     <option value="date">Par date</option>
@@ -256,7 +237,6 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 
 <div class="layout">
 
-<!-- LEFT NAV -->
 <div class="left">
   <div class="sec">
     <div class="sec-lbl">📊 Priorité</div>
@@ -292,9 +272,14 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
     <div class="nav" onclick="setFilt(this,'cat','IT News')"><div class="nav-l"><div class="bar" style="background:#ec4899"></div>IT News Info</div><span class="cnt" id="c-IT News">0</span></div>
     <div class="nav" onclick="setFilt(this,'cat','CNETFrance')"><div class="nav-l"><div class="bar" style="background:#ff0000"></div>CNET France</div><span class="cnt" id="c-CNETFrance">0</span></div>
   </div>
+  <div class="divider"></div>
+  <div class="sec">
+    <div class="sec-lbl">🌍 Presse tech EN</div>
+    <div class="nav" onclick="setFilt(this,'cat','tech')"><div class="nav-l"><div class="bar" style="background:#ff8c00"></div>Toutes EN</div><span class="cnt" id="c-tech">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','Ars Technica')"><div class="nav-l"><div class="bar" style="background:#ff8c00"></div>Ars Technica</div><span class="cnt" id="c-Ars Technica">0</span></div>
+  </div>
 </div>
 
-<!-- FEED -->
 <div class="feed">
   <div class="feed-top">
     <div class="search-wrap" style="display:none"><input type="text"></div>
@@ -304,7 +289,6 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
   <div class="prog" id="prog"><div class="prog-fill" id="progFill"></div></div>
   <div class="steps" id="steps"></div>
   <div class="err-bar" id="errBar"></div>
-  <!-- PANNEAU ACTIONS REQUISES -->
   <div id="actionsPanel" style="display:none;padding:12px 13px;border-bottom:1px solid var(--b1);background:rgba(255,193,7,.03)">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
       <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:#ffc107">⚡ Actions requises par votre tenant</div>
@@ -318,13 +302,12 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
   <div class="cards" id="cards">
     <div class="empty">
       <div class="empty-ico">📡</div>
-      <p style="line-height:1.9">Cliquez sur <strong>Actualiser les flux</strong><br>pour charger <strong>17 sources</strong> M365 + presse FR<br><br>
+      <p style="line-height:1.9">Cliquez sur <strong>Actualiser les flux</strong><br>pour charger <strong>18 sources</strong> M365 + presse FR + EN<br><br>
       <span style="font-size:10px;color:var(--mu)">✅ 100% gratuit — aucune clé API</span></p>
     </div>
   </div>
 </div>
 
-<!-- RIGHT -->
 <div class="right">
   <div style="margin-bottom:18px">
     <div class="rp-title">📊 Statistiques</div>
@@ -336,42 +319,37 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
       <div class="stat-row"><span style="color:var(--mu2)">📬 Message Center</span><span class="stat-val" id="s-mc" style="color:#ff6b35">0</span></div>
       <div class="stat-row"><span style="color:var(--mu2)">🗺 Roadmap</span><span class="stat-val" id="s-rm" style="color:#a855f7">0</span></div>
       <div class="stat-row"><span style="color:var(--mu2)">🇫🇷 Sources FR</span><span class="stat-val" id="s-fr" style="color:#22c55e">0</span></div>
+      <div class="stat-row"><span style="color:var(--mu2)">🌍 Sources EN</span><span class="stat-val" id="s-tech" style="color:#ff8c00">0</span></div>
     </div>
   </div>
   <div style="margin-bottom:18px">
     <div class="rp-title">🔗 Liens officiels Microsoft</div>
-    <a href="https://www.microsoft.com/fr-FR/microsoft-365/roadmap#Roadmap" target="_blank" rel="noopener"
-       style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
+    <a href="https://www.microsoft.com/fr-FR/microsoft-365/roadmap#Roadmap" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
       <span style="font-size:16px">🗺</span>
       <div><div style="font-weight:600;color:var(--teal)">Roadmap M365 officielle</div><div style="font-size:10px;color:var(--mu2)">microsoft.com/roadmap</div></div>
       <span style="margin-left:auto;color:var(--mu2)">↗</span>
     </a>
-    <a href="https://admin.microsoft.com/Adminportal/Home#/MessageCenter" target="_blank" rel="noopener"
-       style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
+    <a href="https://admin.microsoft.com/Adminportal/Home#/MessageCenter" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
       <span style="font-size:16px">📬</span>
       <div><div style="font-weight:600;color:var(--teal)">Message Center</div><div style="font-size:10px;color:var(--mu2)">admin.microsoft.com</div></div>
       <span style="margin-left:auto;color:var(--mu2)">↗</span>
     </a>
-    <a href="https://admin.microsoft.com/Adminportal/Home#/servicehealth" target="_blank" rel="noopener"
-       style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
+    <a href="https://admin.microsoft.com/Adminportal/Home#/servicehealth" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
       <span style="font-size:16px">❤️</span>
       <div><div style="font-weight:600;color:var(--teal)">Service Health</div><div style="font-size:10px;color:var(--mu2)">admin.microsoft.com</div></div>
       <span style="margin-left:auto;color:var(--mu2)">↗</span>
     </a>
-    <a href="https://security.microsoft.com/securescore" target="_blank" rel="noopener"
-       style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
+    <a href="https://security.microsoft.com/securescore" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
       <span style="font-size:16px">🛡</span>
       <div><div style="font-weight:600;color:var(--teal)">Secure Score</div><div style="font-size:10px;color:var(--mu2)">security.microsoft.com</div></div>
       <span style="margin-left:auto;color:var(--mu2)">↗</span>
     </a>
-    <a href="https://status.cloud.microsoft/m365/" target="_blank" rel="noopener"
-       style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
+    <a href="https://status.cloud.microsoft/m365/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
       <span style="font-size:16px">📊</span>
       <div><div style="font-weight:600;color:var(--teal)">Status M365</div><div style="font-size:10px;color:var(--mu2)">status.cloud.microsoft</div></div>
       <span style="margin-left:auto;color:var(--mu2)">↗</span>
     </a>
-    <a href="https://www.cert.ssi.gouv.fr/alerte/" target="_blank" rel="noopener"
-       style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
+    <a href="https://www.cert.ssi.gouv.fr/alerte/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
       <span style="font-size:16px">🇫🇷</span>
       <div><div style="font-weight:600;color:var(--teal)">CERT-FR Alertes</div><div style="font-size:10px;color:var(--mu2)">cert.ssi.gouv.fr</div></div>
       <span style="margin-left:auto;color:var(--mu2)">↗</span>
@@ -384,14 +362,13 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
     </div>
     <div style="font-size:10px;color:var(--mu);margin-bottom:8px">Cliquez pour les détails.</div>
     <div id="svcCards"></div>
-    <a href="https://admin.microsoft.com/Adminportal/Home#/servicehealth" target="_blank" rel="noopener"
-       style="display:flex;align-items:center;justify-content:center;gap:5px;padding:6px 10px;background:rgba(0,168,168,.05);border:1px solid rgba(0,168,168,.18);border-radius:7px;color:var(--teal2);font-size:11px;text-decoration:none;margin-top:7px">
+    <a href="https://admin.microsoft.com/Adminportal/Home#/servicehealth" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:5px;padding:6px 10px;background:rgba(0,168,168,.05);border:1px solid rgba(0,168,168,.18);border-radius:7px;color:var(--teal2);font-size:11px;text-decoration:none;margin-top:7px">
       ↗ Service Health Dashboard
     </a>
     <div style="font-size:9px;color:var(--mu);text-align:center;margin-top:4px;font-family:'IBM Plex Mono',monospace">⚠️ connexion admin requise</div>
   </div>
   <div>
-    <div class="rp-title">🌐 Flux actifs (17)</div>
+    <div class="rp-title">🌐 Flux actifs (18)</div>
     <div style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono',monospace;padding:2px 8px;margin-bottom:3px">📬 ADMIN M365</div>
     <div class="src-item">📬 Message Center (merill.net)</div>
     <div class="src-item">🗺 Roadmap (cloudscout.one)</div>
@@ -411,12 +388,13 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
     <div class="src-item">☁️ Cachem.fr</div>
     <div class="src-item">📡 IT News Info</div>
     <div class="src-item">🔴 CNET France</div>
+    <div style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono',monospace;padding:2px 8px;margin:5px 0 3px">🌍 PRESSE EN</div>
+    <div class="src-item">🧠 Ars Technica</div>
   </div>
 </div>
 
-</div><!-- /layout -->
+</div>
 
-<!-- MODAL style SharePoint Panel -->
 <div class="modal-bg" id="modalBg" onclick="if(event.target===this)closeModal()">
   <div class="modal">
     <div class="modal-header">
@@ -425,47 +403,41 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
       <div class="modal-desc" id="md"></div>
     </div>
     <div class="modal-body">
-    <div class="modal-sec">
-      <div class="modal-sec-h">Vue d'ensemble</div>
-      <div class="modal-grid" id="mg"></div>
-    </div>
-    <!-- INCIDENTS DÉTECTÉS -->
-    <div class="modal-sec" id="mincidents-sec" style="display:none">
-      <div class="modal-sec-h" style="color:#a4262c;border-bottom:1px solid #fde7e9">⚠️ INCIDENTS / ALERTES DÉTECTÉS DANS VOS FLUX</div>
-      <div id="mincidents"></div>
-    </div>
-    <!-- SOUS-SERVICES -->
-    <div class="modal-sec" id="mfeat-sec">
-      <div class="modal-sec-h">Sous-services</div>
-      <div id="mfeat"></div>
-    </div>
-    <!-- ARTICLES RSS LIÉS -->
-    <div class="modal-sec" id="mrss-sec" style="display:none">
-      <div class="modal-sec-h">📰 ARTICLES RSS LIÉS À CE SERVICE</div>
-      <div id="mrss"></div>
-    </div>
-    <div class="modal-sec">
-      <div class="modal-sec-h">Uptime 30 jours</div>
-      <div style="display:flex;justify-content:space-between;margin-bottom:6px">
-        <span id="mup" style="font-size:16px;font-weight:700"></span>
-        <span style="font-size:11px;color:var(--mu2)">SLA cible : 99,9%</span>
+      <div class="modal-sec">
+        <div class="modal-sec-h">Vue d'ensemble</div>
+        <div class="modal-grid" id="mg"></div>
       </div>
-      <div style="height:6px;background:var(--s3);border-radius:3px;overflow:hidden">
-        <div id="mupbar" style="height:100%;border-radius:3px;transition:width 0.8s ease;width:0%"></div>
+      <div class="modal-sec" id="mincidents-sec" style="display:none">
+        <div class="modal-sec-h" style="color:#a4262c;border-bottom:1px solid #fde7e9">⚠️ INCIDENTS / ALERTES DÉTECTÉS DANS VOS FLUX</div>
+        <div id="mincidents"></div>
+      </div>
+      <div class="modal-sec" id="mfeat-sec">
+        <div class="modal-sec-h">Sous-services</div>
+        <div id="mfeat"></div>
+      </div>
+      <div class="modal-sec" id="mrss-sec" style="display:none">
+        <div class="modal-sec-h">📰 ARTICLES RSS LIÉS À CE SERVICE</div>
+        <div id="mrss"></div>
+      </div>
+      <div class="modal-sec">
+        <div class="modal-sec-h">Uptime 30 jours</div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+          <span id="mup" style="font-size:16px;font-weight:700"></span>
+          <span style="font-size:11px;color:var(--mu2)">SLA cible : 99,9%</span>
+        </div>
+        <div style="height:6px;background:var(--s3);border-radius:3px;overflow:hidden">
+          <div id="mupbar" style="height:100%;border-radius:3px;transition:width 0.8s ease;width:0%"></div>
+        </div>
+      </div>
+      <div class="modal-sec">
+        <div class="modal-sec-h">Liens utiles</div>
+        <div id="mlinks"></div>
       </div>
     </div>
-    <div class="modal-sec">
-      <div class="modal-sec-h">Liens utiles</div>
-      <div id="mlinks"></div>
-    </div>
-    </div><!-- /modal-body -->
   </div>
 </div>
 
 <script>
-// ═══════════════════════════════════════════════
-// SOURCES
-// ═══════════════════════════════════════════════
 const SOURCES = [
   {url:"https://mc.merill.net/rss.xml",                                                                        cat:"Message Center", group:"admin",   color:"#ff6b35", emo:"📬", lbl:"Message Center"},
   {url:"https://app.cloudscout.one/feed/",                                                                     cat:"Roadmap M365",   group:"admin",   color:"#a855f7", emo:"🗺",  lbl:"Roadmap M365 (cloudscout)"},
@@ -477,41 +449,24 @@ const SOURCES = [
   {url:"https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=IntuneSupportTeamBlog",        cat:"Intune",         group:"ms",      color:"#00897b", emo:"📱", lbl:"Intune Blog"},
   {url:"https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=Exchange",                     cat:"Exchange Online",group:"ms",      color:"#0072c6", emo:"📧", lbl:"Exchange Blog"},
   {url:"https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=MicrosoftCopilotBlog",         cat:"Copilot",        group:"ms",      color:"#00b4d8", emo:"✨", lbl:"Copilot Blog"},
-  {url:"https://www.it-connect.fr/feed/",              cat:"IT-Connect",   group:"fr", color:"#22c55e", emo:"🔧", lbl:"IT-Connect.fr"},
-  {url:"https://www.zdnet.fr/feeds/rss/actualites/",   cat:"ZDNet",        group:"fr", color:"#e11d48", emo:"📰", lbl:"ZDNet France"},
-  {url:"https://www.01net.com/rss/info/futur/",        cat:"01net",        group:"fr", color:"#f97316", emo:"💻", lbl:"01net.com"},
-  {url:"https://www.lecrabe.info/feed/",               cat:"Le Crabe Info",group:"fr", color:"#06b6d4", emo:"🦀", lbl:"Le Crabe Info"},
-  {url:"https://www.cachem.fr/feed/",                  cat:"Cachem",       group:"fr", color:"#8b5cf6", emo:"☁️", lbl:"Cachem.fr"},
-  {url:"https://www.it-news.info/feed",                cat:"IT News",      group:"fr", color:"#ec4899", emo:"📡", lbl:"IT News Info"},
-  {url:"https://www.cnetfrance.fr/rss/info.xml",       cat:"CNETFrance",   group:"fr", color:"#ff0000", emo:"🔴", lbl:"CNET France"},
+  {url:"https://www.it-connect.fr/feed/",                                                                      cat:"IT-Connect",     group:"fr",      color:"#22c55e", emo:"🔧", lbl:"IT-Connect.fr"},
+  {url:"https://www.zdnet.fr/feeds/rss/actualites/",                                                           cat:"ZDNet",          group:"fr",      color:"#e11d48", emo:"📰", lbl:"ZDNet France"},
+  {url:"https://www.01net.com/rss/info/futur/",                                                                cat:"01net",          group:"fr",      color:"#f97316", emo:"💻", lbl:"01net.com"},
+  {url:"https://www.lecrabe.info/feed/",                                                                       cat:"Le Crabe Info",  group:"fr",      color:"#06b6d4", emo:"🦀", lbl:"Le Crabe Info"},
+  {url:"https://www.cachem.fr/feed/",                                                                          cat:"Cachem",         group:"fr",      color:"#8b5cf6", emo:"☁️", lbl:"Cachem.fr"},
+  {url:"https://www.it-news.info/feed",                                                                        cat:"IT News",        group:"fr",      color:"#ec4899", emo:"📡", lbl:"IT News Info"},
+  {url:"https://www.cnetfrance.fr/rss/info.xml",                                                               cat:"CNETFrance",     group:"fr",      color:"#ff0000", emo:"🔴", lbl:"CNET France"},
+  {url:"https://feeds.arstechnica.com/arstechnica/index",                                                      cat:"Ars Technica",   group:"tech",    color:"#ff8c00", emo:"🧠", lbl:"Ars Technica"},
 ];
 
-// ═══════════════════════════════════════════════
-// CLASSIFICATION — simple, rapide, pas de regex
-// ═══════════════════════════════════════════════
-// Ordre important : Copilot et Intune avant M365
 const CAT_RULES = [
-  // IA → Copilot
-  {cat:"Copilot", color:"#00b4d8", emo:"✨",
-   words:["copilot","ia générative","intelligence artificielle","llm","chatgpt","openai","azure openai","gemini","deepseek","generative ai","ai model","phi-4","phi-3"]},
-  // Windows/Defender/Endpoint → Intune
-  {cat:"Intune", color:"#00897b", emo:"📱",
-   words:["intune","autopilot","windows 11","windows 10","windows server","patch tuesday","defender antivirus","defender for endpoint","bitlocker","wsus","winget","endpoint manager","mdm","mobile device","firmware update","insider preview","insider build","cumulative update"]},
-  // Identité/Sécu → Entra ID
-  {cat:"Entra ID", color:"#4776e6", emo:"🔐",
-   words:["entra","azure ad","azure active directory","conditional access","accès conditionnel","mfa","passkey","fido","zero trust","privileged identity","pim","ransomware","phishing","hameçonnage","cyberattaque","faille critique","cve-","vulnerability","malware","breach","zero-day","sentinel","defender for identity"]},
-  // SharePoint
-  {cat:"SharePoint", color:"#0078d4", emo:"📁",
-   words:["sharepoint","spfx","viva connections","viva engage","intranet","webpart","hub site","sharepoint online"]},
-  // Teams
-  {cat:"Teams", color:"#6264a7", emo:"💬",
-   words:["microsoft teams","ms teams","teams meeting","teams room","teams phone","town hall","teams webinar","teams premium"]},
-  // Exchange
-  {cat:"Exchange Online", color:"#0072c6", emo:"📧",
-   words:["exchange online","mail flow","mailbox","outlook web","owa","smtp","dkim","dmarc","exchange"]},
-  // M365 générique — en dernier
-  {cat:"Microsoft 365", color:"#d83b01", emo:"🟥",
-   words:["microsoft 365","office 365","m365 ","office365","microsoft loop","onedrive","forms","planner","whiteboard","stream","yammer","viva"]},
+  {cat:"Copilot", color:"#00b4d8", emo:"✨", words:["copilot","ia générative","intelligence artificielle","llm","chatgpt","openai","azure openai","gemini","deepseek","generative ai","ai model","phi-4","phi-3"]},
+  {cat:"Intune", color:"#00897b", emo:"📱", words:["intune","autopilot","windows 11","windows 10","windows server","patch tuesday","defender antivirus","defender for endpoint","bitlocker","wsus","winget","endpoint manager","mdm","mobile device","firmware update","insider preview","insider build","cumulative update"]},
+  {cat:"Entra ID", color:"#4776e6", emo:"🔐", words:["entra","azure ad","azure active directory","conditional access","accès conditionnel","mfa","passkey","fido","zero trust","privileged identity","pim","ransomware","phishing","hameçonnage","cyberattaque","faille critique","cve-","vulnerability","malware","breach","zero-day","sentinel","defender for identity"]},
+  {cat:"SharePoint", color:"#0078d4", emo:"📁", words:["sharepoint","spfx","viva connections","viva engage","intranet","webpart","hub site","sharepoint online"]},
+  {cat:"Teams", color:"#6264a7", emo:"💬", words:["microsoft teams","ms teams","teams meeting","teams room","teams phone","town hall","teams webinar","teams premium"]},
+  {cat:"Exchange Online", color:"#0072c6", emo:"📧", words:["exchange online","mail flow","mailbox","outlook web","owa","smtp","dkim","dmarc","exchange"]},
+  {cat:"Microsoft 365", color:"#d83b01", emo:"🟥", words:["microsoft 365","office 365","m365 ","office365","microsoft loop","onedrive","forms","planner","whiteboard","stream","yammer","viva"]},
 ];
 
 function classifyText(text) {
@@ -524,9 +479,6 @@ function classifyText(text) {
   return null;
 }
 
-// ═══════════════════════════════════════════════
-// PRIORITÉ
-// ═══════════════════════════════════════════════
 const P_URG  = ["critical security","zero-day","ransomware","cyberattaque","faille critique","cve-","exploit","breach","compromis","piratage","malware","phishing","hameçonnage"];
 const P_CRIT = ["end of life","end of support","retirement","action required","breaking change","fin de support","migration obligatoire","patch tuesday","will retire","will be retired","deadline","déprécié"];
 const P_IMP  = ["generally available","public preview","new feature","rolling out","introducing","announcing","update","nouvelle fonctionnalité","disponible","annonce","nouveauté","roadmap","in development"];
@@ -556,14 +508,10 @@ function fmtDate(s) {
   } catch(e){ return ""; }
 }
 
-// ═══════════════════════════════════════════════
-// FETCH RAPIDE — CACHE + PARALLÈLE
-// ═══════════════════════════════════════════════
 const IS_FILE_PROTO = location.protocol === 'file:';
 const CACHE_KEY = 'adminwatch_cache';
-const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
+const CACHE_TTL = 30 * 60 * 1000;
 
-// Proxies ordonnés par fiabilité — le premier qui répond gagne
 const PROXIES = [
   { fn: u=>`https://api.allorigins.win/get?url=${encodeURIComponent(u)}`, json:true  },
   { fn: u=>`https://corsproxy.io/?${encodeURIComponent(u)}`,              json:false },
@@ -571,7 +519,6 @@ const PROXIES = [
   { fn: u=>`https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`,   json:false },
 ];
 
-// Cache SessionStorage
 function cacheGet(url) {
   try {
     const c = JSON.parse(sessionStorage.getItem(CACHE_KEY)||'{}');
@@ -584,7 +531,6 @@ function cacheSet(url, data) {
   try {
     const c = JSON.parse(sessionStorage.getItem(CACHE_KEY)||'{}');
     c[url] = {ts:Date.now(), data};
-    // Garder max 30 entrées
     const keys = Object.keys(c);
     if (keys.length > 30) delete c[keys[0]];
     sessionStorage.setItem(CACHE_KEY, JSON.stringify(c));
@@ -598,13 +544,10 @@ function timedFetch(url, ms) {
   });
 }
 
-// Tente tous les proxies EN PARALLÈLE — retourne le premier qui répond
 async function fetchRSS(url) {
-  // Cache d'abord
   const cached = cacheGet(url);
   if (cached) return cached;
 
-  // Course entre tous les proxies simultanément
   const attempts = PROXIES.map(async px => {
     const r = await timedFetch(px.fn(url), 6000);
     if (!r.ok) throw new Error('not ok');
@@ -613,15 +556,11 @@ async function fetchRSS(url) {
     return txt;
   });
 
-  // Premier succès gagne
   const txt = await Promise.any(attempts);
   cacheSet(url, txt);
   return txt;
 }
 
-// ═══════════════════════════════════════════════
-// PARSE RSS
-// ═══════════════════════════════════════════════
 function parseRSS(xml, src) {
   const doc = new DOMParser().parseFromString(xml, "text/xml");
   const items = Array.from(doc.querySelectorAll("item, entry")).slice(0,8);
@@ -631,7 +570,6 @@ function parseRSS(xml, src) {
     const get = (tag) => {
       const el = item.querySelector(tag);
       if (!el) return "";
-      // Pour <link> Atom qui utilise href
       if (tag==="link" && !el.textContent.trim()) return el.getAttribute("href")||"";
       return el.textContent.trim();
     };
@@ -645,14 +583,11 @@ function parseRSS(xml, src) {
 
     const fullText = title+" "+desc+" "+cats;
 
-    // Classification : sources admin → on essaie de trouver le produit M365
-    // Sources FR → pareil
-    // Sources MS directes → catégorie fixe
     let cat=src.cat, color=src.color, emo=src.emo, origCat=src.cat;
 
-    if (src.group==="admin" || src.group==="fr") {
+    if (src.group==="admin" || src.group==="fr" || src.group==="tech") {
       const found = classifyText(fullText);
-      if (found) { cat=found.cat; color=found.color; emo=found.emo; }
+      if (found && src.group!=="tech") { cat=found.cat; color=found.color; emo=found.emo; }
     }
 
     return {
@@ -667,39 +602,48 @@ function parseRSS(xml, src) {
   });
 }
 
-// ═══════════════════════════════════════════════
-// STATE + FILTRES
-// ═══════════════════════════════════════════════
 let allNews=[], fPrio="all", fCat="all";
 
 function setFilt(el, type, val) {
   if (type==="prio") {
     fPrio=val;
+    if(val==="all") fCat="all";
     document.querySelectorAll(".nav").forEach(e=>e.classList.remove("on"));
-    // Remettre "Toutes" si on clique priorité
   } else {
     fCat=val;
     document.querySelectorAll(".nav").forEach(e=>e.classList.remove("on"));
   }
   el.classList.add("on");
+  updateFeedLabel();
   render();
 }
 
-// setSNav — gestion des onglets subnav
 function setSNav(el) {
   document.querySelectorAll(".snav-item").forEach(e=>e.classList.remove("on"));
   el.classList.add("on");
+  updateFeedLabel();
 }
 
-// Horloge
+function updateFeedLabel() {
+  const el = document.getElementById("feed-label");
+  if (!el) return;
+  if (fPrio !== "all") {
+    const map = {urgent:"Articles urgents",critical:"Articles critiques",important:"Articles importants",info:"Articles d'information"};
+    el.textContent = map[fPrio] || "Articles filtrés";
+    return;
+  }
+  if (fCat==="ms") return el.textContent = "Articles Microsoft";
+  if (fCat==="fr") return el.textContent = "Presse tech FR";
+  if (fCat==="tech") return el.textContent = "Presse tech EN";
+  if (fCat!=="all") return el.textContent = fCat;
+  el.textContent = "Tous les articles";
+}
+
 setInterval(()=>{
   document.getElementById("ts").textContent=new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
 },1000);
 document.getElementById("ts").textContent=new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
 
-// ═══════════════════════════════════════════════
-// SCAN PARALLÈLE TOTAL
-// ═══════════════════════════════════════════════
 async function startScan() {
   const btn=document.getElementById("btnScan");
   btn.disabled=true; btn.classList.add("spinning");
@@ -711,7 +655,6 @@ async function startScan() {
   const ss=SOURCES.map(s=>({lbl:s.lbl,st:"pending"}));
   drawSteps(ss);
 
-  // Squelettes
   const cardsEl=document.getElementById("cards");
   cardsEl.innerHTML=Array(8).fill('<div class="skel-card"><div class="skel" style="height:9px;width:35%;margin-bottom:9px"></div><div class="skel" style="height:13px;width:70%;margin-bottom:8px"></div><div class="skel" style="height:9px;width:100%;margin-bottom:3px"></div><div class="skel" style="height:9px;width:55%"></div></div>').join("");
 
@@ -728,11 +671,9 @@ async function startScan() {
     done++;
     setProg(4+Math.floor(done/SOURCES.length*90));
     drawSteps(ss);
-    // Affichage progressif — render dès qu'on a des articles
     if(allNews.length>0){ dedup(); updateCounts(); render(); }
   }
 
-  // TOUS en parallèle simultanément
   await Promise.allSettled(SOURCES.map((s,i)=>loadOne(s,i)));
 
   dedup(); updateCounts(); render();
@@ -759,14 +700,12 @@ function dedup() {
   allNews.sort((a,b)=>new Date(b.rawDate||0)-new Date(a.rawDate||0));
 }
 
-// ═══════════════════════════════════════════════
-// RENDER — DOM pur, pas d'innerHTML avec données
-// ═══════════════════════════════════════════════
 function render() {
   let data=[...allNews];
   if(fPrio!=="all")  data=data.filter(n=>n.priority===fPrio);
-  if(fCat==="ms")    data=data.filter(n=>n.group==="ms"||n.group==="admin");
+  if(fCat==="ms")      data=data.filter(n=>n.group==="ms"||n.group==="admin");
   else if(fCat==="fr") data=data.filter(n=>n.group==="fr");
+  else if(fCat==="tech") data=data.filter(n=>n.group==="tech");
   else if(fCat!=="all") data=data.filter(n=>n.cat===fCat||n.origCat===fCat);
 
   const q=document.getElementById("search").value.toLowerCase();
@@ -789,29 +728,21 @@ function render() {
     const pc=PCLR[n.priority]||"#4a9eff";
 
     const card=document.createElement("div"); card.className="card";
-
-    // Barre latérale colorée
     const stripe=document.createElement("div"); stripe.className="card-stripe";
     stripe.style.background=pc;
     card.appendChild(stripe);
 
-    // HEAD
     const head=document.createElement("div"); head.className="card-head";
     const bads=document.createElement("div"); bads.className="badges";
 
-    // Badge catégorie
     mkBadge(bads, n.emo+" "+n.cat, n.color);
-    // Badge priorité
     mkBadge(bads, PLBL[n.priority], pc);
-    // Badge groupe
     if(n.group==="admin") mkBadge(bads,"📬 ADMIN","#ff6b35");
     else if(n.group==="ms") mkBadge(bads,"🏢 MS","#4a9eff");
-    else mkBadge(bads,"🇫🇷 FR","#22c55e");
-    // Via (si reclassifié)
+    else if(n.group==="fr") mkBadge(bads,"🇫🇷 FR","#22c55e");
+    else if(n.group==="tech") mkBadge(bads,"🌍 EN","#ff8c00");
     if(n.origCat!==n.cat) mkBadge(bads,"via "+n.origCat,"#7a86a8",true);
-    // NOUVEAU
     if(i<4) mkBadge(bads,"NOUVEAU","#22c55e");
-    // ACTION
     if(n.actionRequired) mkBadge(bads,"⚡ ACTION","#ff4757");
 
     head.appendChild(bads);
@@ -819,13 +750,10 @@ function render() {
     head.appendChild(dt);
     card.appendChild(head);
 
-    // TITRE
     const tit=document.createElement("div"); tit.className="card-title"; tit.textContent=n.title;
     card.appendChild(tit);
-    // RÉSUMÉ
     const bod=document.createElement("div"); bod.className="card-body"; bod.textContent=n.summary;
     card.appendChild(bod);
-    // FOOTER
     const foot=document.createElement("div"); foot.className="card-foot";
     const src=document.createElement("span"); src.className="card-src"; src.textContent="🔗 "+n.source;
     foot.appendChild(src);
@@ -850,9 +778,6 @@ function mkBadge(parent, text, color, small=false) {
   parent.appendChild(b);
 }
 
-// ═══════════════════════════════════════════════
-// COMPTEURS
-// ═══════════════════════════════════════════════
 function updateCounts() {
   const set=(id,v)=>{ const e=document.getElementById(id); if(e) e.textContent=v; };
   const n=allNews;
@@ -863,8 +788,10 @@ function updateCounts() {
 
   set("c-ms",n.filter(x=>x.group==="ms"||x.group==="admin").length);
   set("c-fr",n.filter(x=>x.group==="fr").length);
+  set("c-tech",n.filter(x=>x.group==="tech").length);
+
   ["Message Center","Roadmap M365","SharePoint","Teams","Copilot","Microsoft 365","Entra ID","Intune","Exchange Online",
-   "IT-Connect","ZDNet","01net","Le Crabe Info","Cachem","IT News","CNETFrance"].forEach(c=>{
+   "IT-Connect","ZDNet","01net","Le Crabe Info","Cachem","IT News","CNETFrance","Ars Technica"].forEach(c=>{
     set("c-"+c, n.filter(x=>x.cat===c||x.origCat===c).length);
   });
 
@@ -874,62 +801,24 @@ function updateCounts() {
   set("s-mc",n.filter(x=>x.origCat==="Message Center").length);
   set("s-rm",n.filter(x=>x.origCat==="Roadmap M365").length);
   set("s-fr",n.filter(x=>x.group==="fr").length);
-  // Subnav counters
+  set("s-tech",n.filter(x=>x.group==="tech").length);
+
   set("sn-all",n.length);
   set("sn-urgent",n.filter(x=>x.priority==="urgent").length);
   set("sn-critical",n.filter(x=>x.priority==="critical").length);
   updateActionsBtn();
 }
 
-// ═══════════════════════════════════════════════
-// SANTÉ DES SERVICES
-// ═══════════════════════════════════════════════
 const SVCS=[
-  {id:"spo",  name:"SharePoint Online", emo:"📁", color:"#0078d4", uptime:99.97,
-   desc:"Sites, listes, bibliothèques, OneDrive, SPFx.",
-   features:["Sites & pages","Bibliothèques documents","Listes","Recherche","OneDrive","SPFx","Viva Connections"],
-   cats:["SharePoint"],
-   kw:["sharepoint","onedrive","spfx","hub site","viva connections"],
-   admin:"https://admin.microsoft.com/sharepoint", docs:"https://learn.microsoft.com/fr-fr/sharepoint/"},
-  {id:"teams", name:"Microsoft Teams",  emo:"💬", color:"#6264a7", uptime:99.95,
-   desc:"Messagerie, réunions, appels, Teams Rooms.",
-   features:["Messagerie","Réunions vidéo","Teams Phone","Town Hall","Webinaires","Apps & bots"],
-   cats:["Teams"],
-   kw:["teams","teams meeting","teams room","teams phone","town hall","teams premium","teams admin"],
-   admin:"https://admin.teams.microsoft.com/", docs:"https://learn.microsoft.com/fr-fr/microsoftteams/"},
-  {id:"copilot", name:"Copilot M365",   emo:"✨", color:"#00b4d8", uptime:99.88,
-   desc:"IA intégrée dans Teams, SharePoint, Office, Copilot Studio.",
-   features:["Copilot Teams","Copilot SharePoint","Copilot Word/Excel/PPT","Copilot Outlook","Copilot Studio","M365 Chat"],
-   cats:["Copilot"],
-   kw:["copilot","azure openai","ai model","generative ai","llm","m365 chat","copilot studio"],
-   admin:"https://admin.microsoft.com/Adminportal/Home#/copilot", docs:"https://learn.microsoft.com/fr-fr/copilot/microsoft-365/"},
-  {id:"exo",  name:"Exchange Online",   emo:"📧", color:"#0072c6", uptime:99.91,
-   desc:"Messagerie email, calendrier, règles de flux.",
-   features:["Envoi/réception emails","Calendrier","OWA","Règles de flux","Anti-spam","DLP","Archivage"],
-   cats:["Exchange Online"],
-   kw:["exchange online","exchange","mail flow","mailbox","owa","outlook","dkim","dmarc","smtp"],
-   admin:"https://admin.exchange.microsoft.com/", docs:"https://learn.microsoft.com/fr-fr/exchange/"},
-  {id:"entra", name:"Entra ID",         emo:"🔐", color:"#4776e6", uptime:99.99,
-   desc:"Identité, MFA, accès conditionnel, SSO, PIM.",
-   features:["Authentification SSO","Accès conditionnel","MFA","Passkeys","PIM","B2B","App Proxy","Entra Connect"],
-   cats:["Entra ID"],
-   kw:["entra","azure ad","conditional access","mfa","passkey","zero trust","pim","identity","sso"],
-   admin:"https://entra.microsoft.com/", docs:"https://learn.microsoft.com/fr-fr/entra/"},
-  {id:"intune", name:"Intune",           emo:"📱", color:"#00897b", uptime:99.93,
-   desc:"MDM/MAM, conformité, Autopilot, mises à jour Windows.",
-   features:["Enrollment appareils","Conformité","Profils config","MAM","Autopilot","Analytics","Windows Updates"],
-   cats:["Intune"],
-   kw:["intune","autopilot","endpoint manager","mdm","windows update","patch tuesday","defender","windows 11","windows 10"],
-   admin:"https://intune.microsoft.com/", docs:"https://learn.microsoft.com/fr-fr/intune/"},
-  {id:"m365",  name:"M365 Suite",        emo:"🟥", color:"#d83b01", uptime:99.94,
-   desc:"Office apps, Portal M365, Forms, Planner, Loop, Viva.",
-   features:["Office apps","Portal M365","Forms","Planner","Loop","Viva Engage","Stream"],
-   cats:["Microsoft 365"],
-   kw:["microsoft 365","office 365","m365","office apps","forms","planner","loop","stream","viva"],
-   admin:"https://admin.microsoft.com/", docs:"https://learn.microsoft.com/fr-fr/microsoft-365/"},
+  {id:"spo",  name:"SharePoint Online", emo:"📁", color:"#0078d4", uptime:99.97, desc:"Sites, listes, bibliothèques, OneDrive, SPFx.", features:["Sites & pages","Bibliothèques documents","Listes","Recherche","OneDrive","SPFx","Viva Connections"], cats:["SharePoint"], kw:["sharepoint","onedrive","spfx","hub site","viva connections"], admin:"https://admin.microsoft.com/sharepoint", docs:"https://learn.microsoft.com/fr-fr/sharepoint/"},
+  {id:"teams", name:"Microsoft Teams",  emo:"💬", color:"#6264a7", uptime:99.95, desc:"Messagerie, réunions, appels, Teams Rooms.", features:["Messagerie","Réunions vidéo","Teams Phone","Town Hall","Webinaires","Apps & bots"], cats:["Teams"], kw:["teams","teams meeting","teams room","teams phone","town hall","teams premium","teams admin"], admin:"https://admin.teams.microsoft.com/", docs:"https://learn.microsoft.com/fr-fr/microsoftteams/"},
+  {id:"copilot", name:"Copilot M365",   emo:"✨", color:"#00b4d8", uptime:99.88, desc:"IA intégrée dans Teams, SharePoint, Office, Copilot Studio.", features:["Copilot Teams","Copilot SharePoint","Copilot Word/Excel/PPT","Copilot Outlook","Copilot Studio","M365 Chat"], cats:["Copilot"], kw:["copilot","azure openai","ai model","generative ai","llm","m365 chat","copilot studio"], admin:"https://admin.microsoft.com/Adminportal/Home#/copilot", docs:"https://learn.microsoft.com/fr-fr/copilot/microsoft-365/"},
+  {id:"exo",  name:"Exchange Online",   emo:"📧", color:"#0072c6", uptime:99.91, desc:"Messagerie email, calendrier, règles de flux.", features:["Envoi/réception emails","Calendrier","OWA","Règles de flux","Anti-spam","DLP","Archivage"], cats:["Exchange Online"], kw:["exchange online","exchange","mail flow","mailbox","owa","outlook","dkim","dmarc","smtp"], admin:"https://admin.exchange.microsoft.com/", docs:"https://learn.microsoft.com/fr-fr/exchange/"},
+  {id:"entra", name:"Entra ID",         emo:"🔐", color:"#4776e6", uptime:99.99, desc:"Identité, MFA, accès conditionnel, SSO, PIM.", features:["Authentification SSO","Accès conditionnel","MFA","Passkeys","PIM","B2B","App Proxy","Entra Connect"], cats:["Entra ID"], kw:["entra","azure ad","conditional access","mfa","passkey","zero trust","pim","identity","sso"], admin:"https://entra.microsoft.com/", docs:"https://learn.microsoft.com/fr-fr/entra/"},
+  {id:"intune", name:"Intune",           emo:"📱", color:"#00897b", uptime:99.93, desc:"MDM/MAM, conformité, Autopilot, mises à jour Windows.", features:["Enrollment appareils","Conformité","Profils config","MAM","Autopilot","Analytics","Windows Updates"], cats:["Intune"], kw:["intune","autopilot","endpoint manager","mdm","windows update","patch tuesday","defender","windows 11","windows 10"], admin:"https://intune.microsoft.com/", docs:"https://learn.microsoft.com/fr-fr/intune/"},
+  {id:"m365",  name:"M365 Suite",        emo:"🟥", color:"#d83b01", uptime:99.94, desc:"Office apps, Portal M365, Forms, Planner, Loop, Viva.", features:["Office apps","Portal M365","Forms","Planner","Loop","Viva Engage","Stream"], cats:["Microsoft 365"], kw:["microsoft 365","office 365","m365","office apps","forms","planner","loop","stream","viva"], admin:"https://admin.microsoft.com/", docs:"https://learn.microsoft.com/fr-fr/microsoft-365/"},
 ];
 
-// Teste si un article appartient à un service — catégorie d'abord, puis mots-clés
 function matchSvc(n, svc) {
   if (svc.cats && svc.cats.includes(n.cat))      return true;
   if (svc.cats && svc.cats.includes(n.origCat))  return true;
@@ -947,7 +836,6 @@ function drawSvcCards() {
     });
     const st=incidents.length>0?"warn":"ok";
     const stLbl=incidents.length>0?incidents.length+" INCIDENT"+(incidents.length>1?"S":""):"OPÉRATIONNEL";
-    const dotC=st==="ok"?"#22c55e":"#ffc107";
 
     const card=document.createElement("div"); card.className="svc-card";
     card.onclick=()=>openSvcModal(svc.id);
@@ -988,25 +876,20 @@ function drawSvcCards() {
 function openSvcModal(id) {
   const svc=SVCS.find(s=>s.id===id); if(!svc) return;
 
-  // Articles incidents (urgent + critical liés au service)
   const incidents=allNews.filter(n=>{
     if(n.priority!=="urgent"&&n.priority!=="critical") return false;
     return matchSvc(n, svc);
   });
 
-  // Tous les articles liés (toutes priorités)
   const related=allNews.filter(n=> matchSvc(n, svc));
-
   const st=incidents.length>0?"warn":"ok";
 
-  // ── TITRE
   const mh=document.getElementById("mh"); mh.innerHTML="";
   const dot=document.createElement("div");
   dot.style.cssText="width:10px;height:10px;border-radius:50%;background:"+(st==="ok"?"#22c55e":"#ffc107")+";box-shadow:0 0 8px "+(st==="ok"?"rgba(34,197,94,.7)":"rgba(255,193,7,.7)");
   mh.appendChild(dot); mh.appendChild(document.createTextNode(" "+svc.emo+" "+svc.name));
   document.getElementById("md").textContent=svc.desc;
 
-  // ── STATS GRID
   const mg=document.getElementById("mg"); mg.innerHTML="";
   [
     {v:incidents.length===0?"✓ OK":"⚠ "+incidents.length+" alerte"+(incidents.length>1?"s":""), l:"Statut", c:st==="ok"?"#22c55e":"#ffc107"},
@@ -1020,7 +903,6 @@ function openSvcModal(id) {
     box.appendChild(v); box.appendChild(l); mg.appendChild(box);
   });
 
-  // ── INCIDENTS DÉTECTÉS DANS LES FLUX
   const incSec=document.getElementById("mincidents-sec");
   const incEl=document.getElementById("mincidents");
   incEl.innerHTML="";
@@ -1031,7 +913,6 @@ function openSvcModal(id) {
       const box=document.createElement("div");
       box.style.cssText="background:var(--s2);border:1px solid "+pc+"33;border-left:3px solid "+pc+";border-radius:7px;padding:10px 12px;margin-bottom:8px";
 
-      // badges ligne 1
       const brow=document.createElement("div"); brow.style.cssText="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px";
       [
         {t:PLBL[n.priority], c:pc},
@@ -1045,17 +926,14 @@ function openSvcModal(id) {
       });
       box.appendChild(brow);
 
-      // titre
       const tit=document.createElement("div"); tit.style.cssText="font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:#dde3f5;margin-bottom:6px;line-height:1.4";
       tit.textContent=n.title; box.appendChild(tit);
 
-      // résumé
       if(n.summary){
         const sum=document.createElement("div"); sum.style.cssText="font-size:11px;color:#7a86a8;line-height:1.6;margin-bottom:8px";
         sum.textContent=n.summary; box.appendChild(sum);
       }
 
-      // pied : lien article
       const foot=document.createElement("div"); foot.style.cssText="display:flex;justify-content:flex-end";
       const a=document.createElement("a"); a.className="read-btn";
       a.href=n.link; a.target="_blank"; a.rel="noopener"; a.textContent="↗ Lire l'article complet";
@@ -1068,7 +946,6 @@ function openSvcModal(id) {
     incEl.innerHTML='<div style="padding:10px 12px;background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.15);border-radius:7px;font-size:12px;color:#22c55e">✅ Aucun incident détecté dans vos flux RSS pour ce service.</div>';
   }
 
-  // ── SOUS-SERVICES
   const mf=document.getElementById("mfeat"); mf.innerHTML="";
   svc.features.forEach(f=>{
     const row=document.createElement("div"); row.className="feat-row";
@@ -1077,7 +954,6 @@ function openSvcModal(id) {
     st2.textContent="✓ OK"; row.appendChild(nm); row.appendChild(st2); mf.appendChild(row);
   });
 
-  // ── TOUS LES ARTICLES LIÉS (hors incidents déjà affichés)
   const otherRelated=related.filter(n=>n.priority!=="urgent"&&n.priority!=="critical");
   const rssSec=document.getElementById("mrss-sec");
   const rssEl=document.getElementById("mrss");
@@ -1090,7 +966,6 @@ function openSvcModal(id) {
       row.style.cssText="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:6px;margin-bottom:5px";
 
       const left=document.createElement("div"); left.style.flex="1";
-      // mini badges
       const brow=document.createElement("div"); brow.style.cssText="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px";
       const bp=document.createElement("span"); bp.className="b"; bp.textContent=PLBL[n.priority]; bp.style.color=pc; bp.style.border="1px solid "+pc+"44"; bp.style.background=pc+"15"; brow.appendChild(bp);
       const bs=document.createElement("span"); bs.className="b"; bs.textContent=n.source; bs.style.color="var(--mu2)"; bs.style.border="1px solid var(--b1)"; bs.style.background="var(--s3)"; brow.appendChild(bs);
@@ -1113,19 +988,17 @@ function openSvcModal(id) {
     rssSec.style.display="none";
   }
 
-  // ── UPTIME
   document.getElementById("mup").textContent=svc.uptime+"%";
   document.getElementById("mup").style.color=svc.uptime>=99.9?"#22c55e":"#ffc107";
   const bar=document.getElementById("mupbar");
   bar.style.background=svc.uptime>=99.9?"#22c55e":"#ffc107";
   bar.style.width="0%"; setTimeout(()=>bar.style.width=svc.uptime+"%",80);
 
-  // ── LIENS
   const ml=document.getElementById("mlinks"); ml.innerHTML="";
   [
-    {href:svc.admin,       lbl:"🛡 Centre d'administration"},
+    {href:svc.admin, lbl:"🛡 Centre d'administration"},
     {href:"https://status.cloud.microsoft/m365/", lbl:"📊 status.cloud.microsoft"},
-    {href:svc.docs,        lbl:"📚 Documentation Microsoft"},
+    {href:svc.docs, lbl:"📚 Documentation Microsoft"},
     {href:"https://admin.microsoft.com/Adminportal/Home#/servicehealth", lbl:"❤️ Service Health Dashboard"},
   ].forEach(l=>{
     const a=document.createElement("a"); a.className="modal-link";
@@ -1138,9 +1011,6 @@ function openSvcModal(id) {
 function closeModal(){ document.getElementById("modalBg").classList.remove("on"); }
 document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeModal(); });
 
-// ═══════════════════════════════════════════════
-// UI HELPERS
-// ═══════════════════════════════════════════════
 function setProg(v){ document.getElementById("prog").className="prog on"; document.getElementById("progFill").style.width=v+"%"; }
 function hideProg(){ document.getElementById("prog").className="prog"; }
 function drawSteps(ss){
@@ -1155,17 +1025,9 @@ function drawSteps(ss){
 function hideSteps(){ document.getElementById("steps").className="steps"; }
 function showErr(html){ const e=document.getElementById("errBar"); e.className="err-bar on"; e.innerHTML=html; }
 
-// Init
 drawSvcCards();
 
-// ═══════════════════════════════════════════════
-// PANNEAU ACTIONS REQUISES
-// ═══════════════════════════════════════════════
-
-// Préconisations officielles Microsoft par type d'action
-// Enrichit automatiquement chaque article "action required"
 const ACTION_GUIDES = [
-  // Retirement / fin de support
   {
     match: ["retire","retirement","end of support","end of life","will be retired","fin de support","déprécié"],
     level: "🔴 Arrêt de service",
@@ -1177,7 +1039,6 @@ const ACTION_GUIDES = [
       {lbl:"🔔 Message Center admin", href:"https://admin.microsoft.com/Adminportal/Home#/MessageCenter", type:"sec"},
     ]
   },
-  // Action required / migration obligatoire
   {
     match: ["action required","mandatory","migration obligatoire","you must","migrate before","deadline"],
     level: "⚡ Action obligatoire",
@@ -1189,7 +1050,6 @@ const ACTION_GUIDES = [
       {lbl:"📚 Docs Microsoft 365", href:"https://learn.microsoft.com/fr-fr/microsoft-365/", type:"sec"},
     ]
   },
-  // Sécurité / CVE / vulnérabilité
   {
     match: ["cve-","vulnerability","zero-day","exploit","breach","ransomware","phishing","cyberattaque","faille"],
     level: "🚨 Sécurité critique",
@@ -1202,7 +1062,6 @@ const ACTION_GUIDES = [
       {lbl:"📋 CERT-FR alertes", href:"https://www.cert.ssi.gouv.fr/alerte/", type:"sec"},
     ]
   },
-  // Patch Tuesday / mise à jour Windows
   {
     match: ["patch tuesday","cumulative update","windows update","kb article","security update"],
     level: "🔄 Mise à jour système",
@@ -1214,7 +1073,6 @@ const ACTION_GUIDES = [
       {lbl:"🔍 Rapport conformité Intune", href:"https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/compliance", type:"sec"},
     ]
   },
-  // Copilot / IA - nouveauté à activer
   {
     match: ["copilot","microsoft 365 copilot","copilot studio","copilot agent"],
     level: "✨ Fonctionnalité IA",
@@ -1226,7 +1084,6 @@ const ACTION_GUIDES = [
       {lbl:"🔒 Politique données Copilot", href:"https://learn.microsoft.com/fr-fr/copilot/microsoft-365/microsoft-365-copilot-privacy", type:"sec"},
     ]
   },
-  // SharePoint / SPFx
   {
     match: ["sharepoint","spfx","sharepoint framework"],
     level: "📁 SharePoint Online",
@@ -1238,7 +1095,6 @@ const ACTION_GUIDES = [
       {lbl:"🔧 SPFx Compatibility", href:"https://aka.ms/spfx-matrix", type:"sec"},
     ]
   },
-  // Générique fallback
   {
     match: ["__fallback__"],
     level: "📋 Vérification requise",
@@ -1257,11 +1113,10 @@ function getActionGuide(item) {
     if (g.match[0]==="__fallback__") continue;
     if (g.match.some(k=>t.includes(k))) return g;
   }
-  return ACTION_GUIDES[ACTION_GUIDES.length-1]; // fallback
+  return ACTION_GUIDES[ACTION_GUIDES.length-1];
 }
 
 function extractDeadline(text) {
-  // Chercher des patterns de date dans le texte
   const patterns = [
     /(\w+ \d{1,2},?\s*\d{4})/gi,
     /(\d{1,2}\s+\w+\s+\d{4})/gi,
@@ -1297,7 +1152,6 @@ function drawActionsList() {
     return;
   }
 
-  // Trier : urgent d'abord, puis critical, puis par date
   actions.sort((a,b)=>(PORD[a.priority]||3)-(PORD[b.priority]||3));
 
   actions.forEach(item=>{
@@ -1308,13 +1162,11 @@ function drawActionsList() {
     const card=document.createElement("div");
     card.className="action-card "+(item.priority==="urgent"?"urgent":item.priority==="critical"?"critical":"");
 
-    // HEAD : titre + source
     const head=document.createElement("div"); head.className="action-head";
     const tit=document.createElement("div"); tit.className="action-title"; tit.textContent=item.title;
     head.appendChild(tit);
     card.appendChild(head);
 
-    // BADGES
     const bads=document.createElement("div"); bads.className="action-badges";
     const bp=document.createElement("span"); bp.className="b";
     bp.textContent=PLBL[item.priority]; bp.style.color=pc; bp.style.border="1px solid "+pc+"55"; bp.style.background=pc+"15";
@@ -1331,7 +1183,6 @@ function drawActionsList() {
     }
     card.appendChild(bads);
 
-    // NIVEAU D'ACTION
     const lvlBlock=document.createElement("div"); lvlBlock.className="action-block";
     const lvlT=document.createElement("div"); lvlT.className="action-block-title"; lvlT.textContent="NIVEAU D'ACTION";
     const lvlV=document.createElement("div"); lvlV.className="action-block-body";
@@ -1339,7 +1190,6 @@ function drawActionsList() {
     lvlBlock.appendChild(lvlT); lvlBlock.appendChild(lvlV);
     card.appendChild(lvlBlock);
 
-    // RÉSUMÉ DE L'ARTICLE
     if(item.summary){
       const sumBlock=document.createElement("div"); sumBlock.className="action-block";
       const sumT=document.createElement("div"); sumT.className="action-block-title"; sumT.textContent="CONTEXTE (source : "+item.source+")";
@@ -1348,7 +1198,6 @@ function drawActionsList() {
       card.appendChild(sumBlock);
     }
 
-    // PRÉCONISATION OFFICIELLE
     const precoBlock=document.createElement("div"); precoBlock.className="action-block";
     precoBlock.style.borderColor="rgba(0,168,168,.2)";
     const precoT=document.createElement("div"); precoT.className="action-block-title"; precoT.textContent="📋 PRÉCONISATION OFFICIELLE";
@@ -1357,7 +1206,6 @@ function drawActionsList() {
     precoBlock.appendChild(precoT); precoBlock.appendChild(precoV);
     card.appendChild(precoBlock);
 
-    // ÉTAPES
     const stepsBlock=document.createElement("div"); stepsBlock.className="action-block";
     const stepsT=document.createElement("div"); stepsT.className="action-block-title"; stepsT.textContent="✅ ÉTAPES À SUIVRE";
     stepsBlock.appendChild(stepsT);
@@ -1368,14 +1216,12 @@ function drawActionsList() {
     });
     card.appendChild(stepsBlock);
 
-    // LIENS OFFICIELS
     const linksRow=document.createElement("div"); linksRow.className="action-links";
     guide.links.forEach(l=>{
       const a=document.createElement("a"); a.className="action-lnk "+l.type;
       a.href=l.href; a.target="_blank"; a.rel="noopener"; a.textContent=l.lbl;
       linksRow.appendChild(a);
     });
-    // Lien vers l'article original
     const aOrig=document.createElement("a"); aOrig.className="action-lnk sec";
     aOrig.href=item.link; aOrig.target="_blank"; aOrig.rel="noopener"; aOrig.textContent="↗ Article original";
     linksRow.appendChild(aOrig);
@@ -1385,17 +1231,14 @@ function drawActionsList() {
   });
 }
 
-// Mettre à jour le compteur du bouton actions
 function updateActionsBtn() {
   const cnt=allNews.filter(n=>n.actionRequired).length;
   const el=document.getElementById("actCnt"); if(el) el.textContent=cnt;
   const btn=document.getElementById("btnActions");
-  if(btn) btn.style.display=cnt>0?"flex":"flex"; // toujours visible
+  if(btn) btn.style.display="flex";
 }
 
-// Init
 drawSvcCards();
-// Auto-chargement au démarrage
 window.addEventListener('load', ()=>startScan());
 </script>
 </body>
