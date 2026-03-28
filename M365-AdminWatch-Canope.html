@@ -1,3 +1,71 @@
+// ─────────────────────────────────────────
+// CONFIG
+// ─────────────────────────────────────────
+
+const CACHE_DURATION = 5 * 60 * 1000; // 5 min
+const cache = new Map();
+
+const PROXIES = [
+  {
+    name: "allorigins",
+    fn: url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+    json: false
+  },
+  {
+    name: "codetabs",
+    fn: url => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+    json: false
+  },
+  {
+    name: "rss2json",
+    fn: url => `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`,
+    json: true
+  }
+];
+
+// ─────────────────────────────────────────
+// CACHE
+// ─────────────────────────────────────────
+
+function cacheGet(key) {
+  const entry = cache.get(key);
+  if (!entry) return null;
+
+  if (Date.now() - entry.time > CACHE_DURATION) {
+    cache.delete(key);
+    return null;
+  }
+
+  return entry.data;
+}
+
+function cacheSet(key, data) {
+  cache.set(key, {
+    data: data,
+    time: Date.now()
+  });
+}
+
+// ─────────────────────────────────────────
+// FETCH AVEC TIMEOUT
+// ─────────────────────────────────────────
+
+async function timedFetch(url, timeout = 8000) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeout);
+
+  try {
+    const response = await fetch(url, { signal: controller.signal });
+    return response;
+  } finally {
+    clearTimeout(id);
+  }
+}
+
+// ─────────────────────────────────────────
+// FETCH RSS PRINCIPAL
+// ─────────────────────────────────────────
+
 async function fetchRSS(url) {
   const cached = cacheGet(url);
   if (cached) return cached;
@@ -6,29 +74,32 @@ async function fetchRSS(url) {
 
   for (const px of PROXIES) {
     try {
-      const r = await timedFetch(px.fn(url), 9000);
-      if (!r.ok) continue;
+      const response = await timedFetch(px.fn(url), 9000);
+      if (!response.ok) continue;
 
-      const txt = px.json
-        ? ((await r.json()).contents || "")
-        : await r.text();
+      const text = px.json
+        ? ((await response.json()).contents || "")
+        : await response.text();
 
-      if (txt && (txt.includes("<item") || txt.includes("<entry"))) {
-        cacheSet(url, txt);
-        return txt;
+      if (text && (text.includes("<item") || text.includes("<entry"))) {
+        cacheSet(url, text);
+        return text;
       }
+
     } catch (e) {
       lastError = e;
+      console.warn(`Proxy KO : ${px.name}`);
     }
   }
 
-  // Fallback spécifique Message Center / Merill :
-  // on retourne une chaîne vide au lieu d'un faux flux RSS
-  // pour éviter d'injecter du contenu non conforme.
+  // ─── Fallback Message Center (Merill)
   if (url.includes("merill")) {
     console.warn("Flux Message Center indisponible :", url);
     return "";
   }
 
-  throw new Error(`RSS indisponible : ${url}${lastError ? " | " + lastError.message : ""}`);
+  throw new Error(
+    `RSS indisponible : ${url}` +
+    (lastError ? " | " + lastError.message : "")
+  );
 }
