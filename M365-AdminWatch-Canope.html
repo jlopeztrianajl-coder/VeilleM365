@@ -14,7 +14,6 @@
   --tx:#323130;--mu:#605e5c;--mu2:#8a8886;
   --nav-bg:#f0f6f6;--nav-active:#006b6b;
   --topbar-h:48px;--subnav-h:44px;
-  --danger:#d13438;--warn:#e87722;--good:#107c10;--info:#4a9eff;
 }
 html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-family:'Segoe UI',sans-serif;font-size:14px}
 
@@ -31,15 +30,10 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 .topbar-section .sec-sub{font-size:11px;color:var(--mu2)}
 
 .top-search{flex:1;display:flex;align-items:center;padding:0 20px}
-.search-sp{display:flex;align-items:center;gap:8px;background:var(--s2);border:1px solid var(--b1);border-radius:2px;padding:6px 12px;width:420px;max-width:100%}
+.search-sp{display:flex;align-items:center;gap:8px;background:var(--s2);border:1px solid var(--b1);border-radius:2px;padding:6px 12px;width:340px;max-width:100%}
 .search-sp:focus-within{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
 .search-sp input{border:none;background:none;outline:none;font-family:'Segoe UI',sans-serif;font-size:13px;color:var(--tx);width:100%}
 .search-sp input::placeholder{color:var(--mu2)}
-
-.view-switch{display:flex;align-items:center;gap:4px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;padding:3px;margin-right:8px}
-.view-btn{padding:6px 11px;border:none;background:transparent;border-radius:2px;color:var(--mu);font-size:12px;font-weight:600;cursor:pointer;font-family:'Segoe UI',sans-serif;transition:all .15s}
-.view-btn:hover{background:#fff;color:var(--tx)}
-.view-btn.on{background:var(--teal);color:#fff}
 
 .topbar-right{display:flex;align-items:center;gap:6px;padding:0 14px;flex-shrink:0}
 .ts{font-size:11px;color:var(--mu2)}
@@ -57,11 +51,8 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 .snav-cnt.red{background:#fde7e9;color:#d13438}
 .snav-cnt.orange{background:#fff4ce;color:#835b00}
 .snav-sep{flex:1}
-.subnav.hidden{display:none}
 
 .layout{display:flex;height:calc(100vh - var(--topbar-h) - var(--subnav-h));overflow:hidden}
-.layout.no-subnav{height:calc(100vh - var(--topbar-h))}
-.hidden{display:none !important}
 
 .left{width:220px;flex-shrink:0;border-right:1px solid var(--b1);overflow-y:auto;background:#fff;padding:8px 0}
 .sec{margin-bottom:6px}
@@ -85,20 +76,17 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 .sort{padding:7px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:2px;color:var(--tx);font-size:13px;font-family:'Segoe UI',sans-serif;outline:none;cursor:pointer}
 .sort:focus{border-color:var(--teal)}
 .sort option{background:#fff}
-
-.prog{height:2px;background:var(--s3);flex-shrink:0;display:none}
-.prog.on{display:block}
+.prog{height:2px;background:var(--s3);flex-shrink:0;display:none}.prog.on{display:block}
 .prog-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--teal2),#0078d4);transition:width .3s}
-.steps{display:none;padding:6px 16px;border-bottom:1px solid var(--b1);flex-wrap:wrap;gap:4px;background:#fff}
-.steps.on{display:flex}
+.steps{display:none;padding:6px 16px;border-bottom:1px solid var(--b1);flex-wrap:wrap;gap:4px;background:#fff}.steps.on{display:flex}
 .step{font-size:10px;padding:2px 8px;background:var(--s2);border:1px solid var(--b1);border-radius:10px;color:var(--mu2)}
 .step.done{color:var(--teal);border-color:var(--teal4);background:var(--teal3)}
 .step.active{color:var(--teal);border-color:var(--teal2);animation:pulse 1.4s infinite}
 .step.err{color:#d13438;border-color:#fde7e9;background:#fde7e9}
 .err-bar{display:none;margin:8px 16px;padding:10px 14px;background:#fde7e9;border:1px solid #f4b8ba;border-radius:2px;font-size:12px;color:#a4262c;line-height:1.7}
 .err-bar.on{display:block}
-
 .cards{padding:12px 16px}
+
 .card{background:#fff;border:1px solid var(--b1);border-radius:3px;padding:12px 16px 11px 20px;margin-bottom:6px;position:relative;overflow:hidden;transition:border-color .15s,box-shadow .15s}
 .card:hover{border-color:var(--teal4);box-shadow:0 2px 8px rgba(0,107,107,.08)}
 .card-stripe{position:absolute;left:0;top:0;bottom:0;width:4px}
@@ -157,59 +145,14 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 .svc-upfill{height:100%;border-radius:2px}
 .src-item{display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:2px;margin-bottom:2px;background:var(--s2);border:1px solid var(--b1);font-size:11px;color:var(--mu)}
 
-.health-main{flex:1;display:none;min-width:0;background:var(--bg);overflow-y:auto}
-.health-main.on{display:flex;flex-direction:column}
-.health-head{padding:14px 16px;background:#fff;border-bottom:1px solid var(--b1);position:sticky;top:0;z-index:10}
-.health-head-title{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.health-head-title h2{font-size:18px;font-weight:700;color:var(--tx);font-family:'Syne',sans-serif}
-.health-sub{font-size:12px;color:var(--mu);margin-top:6px;line-height:1.6}
-.health-body{padding:14px 16px}
-.kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:14px}
-.kpi{background:#fff;border:1px solid var(--b1);border-radius:4px;padding:14px}
-.kpi-label{font-size:11px;color:var(--mu2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;font-weight:700}
-.kpi-value{font-size:24px;font-weight:700;color:var(--tx)}
-.kpi-sub{font-size:11px;color:var(--mu);margin-top:4px}
-
-.health-grid{display:grid;grid-template-columns:1.25fr .95fr;gap:14px;align-items:start}
-.panel{background:#fff;border:1px solid var(--b1);border-radius:4px;overflow:hidden}
-.panel-h{padding:12px 14px;background:var(--s2);border-bottom:1px solid var(--b1);font-size:12px;font-weight:700;color:var(--mu2);text-transform:uppercase;letter-spacing:.08em}
-.panel-b{padding:14px}
-.health-service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.health-svc{background:var(--s2);border:1px solid var(--b1);border-radius:4px;padding:12px;cursor:pointer;transition:all .15s}
-.health-svc:hover{border-color:var(--teal4);background:var(--teal3)}
-.health-svc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px}
-.health-svc-name{font-size:14px;font-weight:700;color:var(--tx);line-height:1.35}
-.health-svc-meta{font-size:11px;color:var(--mu2)}
-.health-svc-row{display:flex;justify-content:space-between;gap:8px;font-size:11px;color:var(--mu);margin-top:6px}
-.health-svc-inc{margin-top:9px;padding:6px 8px;background:#fff4ce;border:1px solid #f0cc72;border-radius:3px;font-size:11px;color:#835b00;line-height:1.45}
-.health-svc-ok{margin-top:9px;padding:6px 8px;background:#dff6dd;border:1px solid #9fd89d;border-radius:3px;font-size:11px;color:#107c10;line-height:1.45}
-
-.incident-list{display:flex;flex-direction:column;gap:10px}
-.incident{background:var(--s2);border:1px solid var(--b1);border-left:4px solid #ffc107;border-radius:4px;padding:12px}
-.incident.urgent{border-left-color:#d13438}
-.incident.critical{border-left-color:#e87722}
-.incident-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:6px}
-.incident-title{font-size:14px;font-weight:700;line-height:1.4}
-.incident-sum{font-size:12px;color:var(--mu);line-height:1.6;margin-bottom:8px}
-.incident-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.incident-meta{font-size:11px;color:var(--mu2)}
-
-.health-links{display:grid;grid-template-columns:1fr;gap:8px}
-.health-link{display:flex;align-items:center;gap:9px;padding:10px 11px;background:var(--s2);border:1px solid var(--b1);border-radius:4px;text-decoration:none;color:var(--tx);transition:all .15s}
-.health-link:hover{border-color:var(--teal4);background:var(--teal3)}
-.health-link .ttl{font-weight:700;color:var(--teal);font-size:12px}
-.health-link .sub{font-size:10px;color:var(--mu2)}
-
-.health-empty{padding:18px;border:1px dashed var(--b1);border-radius:4px;background:#fff;color:var(--mu);text-align:center;font-size:12px;line-height:1.7}
-
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:999;align-items:center;justify-content:center}
 .modal-bg.on{display:flex}
-.modal{background:#fff;border:1px solid var(--b1);border-radius:3px;width:780px;max-width:94vw;max-height:85vh;overflow-y:auto;padding:0;position:relative;box-shadow:0 8px 32px rgba(0,0,0,.18)}
+.modal{background:#fff;border:1px solid var(--b1);border-radius:3px;width:520px;max-width:94vw;max-height:85vh;overflow-y:auto;padding:0;position:relative;box-shadow:0 8px 32px rgba(0,0,0,.18)}
 .modal-header{background:var(--teal);padding:18px 20px 14px;color:#fff;position:sticky;top:0;z-index:2}
 .modal-x{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:2px;color:#fff;cursor:pointer;padding:3px 9px;font-size:12px;font-weight:600;transition:background .15s}
 .modal-x:hover{background:rgba(255,255,255,.3)}
 .modal-h{font-size:18px;font-weight:700;margin-bottom:2px;display:flex;align-items:center;gap:8px;padding-right:40px}
-.modal-desc{font-size:12px;opacity:.9}
+.modal-desc{font-size:12px;opacity:.85}
 .modal-body{padding:18px 20px}
 .modal-sec{margin-bottom:16px}
 .modal-sec-h{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--mu2);font-weight:700;margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--b1)}
@@ -229,17 +172,8 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
 ::-webkit-scrollbar-thumb{background:var(--b1);border-radius:2px}
 ::-webkit-scrollbar-thumb:hover{background:var(--mu2)}
 
-@media(max-width:1300px){
-  .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .health-grid{grid-template-columns:1fr}
-}
 @media(max-width:1100px){.right{display:none}}
-@media(max-width:920px){.health-service-grid{grid-template-columns:1fr}}
-@media(max-width:760px){
-  .left{display:none}
-  .kpi-grid{grid-template-columns:1fr}
-  .view-switch{display:none}
-}
+@media(max-width:760px){.left{display:none}}
 </style>
 </head>
 <body>
@@ -260,42 +194,32 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
       <div class="canope-name">Canopé</div>
     </div>
   </div>
-
   <div class="topbar-section">
     <div class="sec-name">Veille M365</div>
     <div class="sec-sub">Référent AdminM365</div>
   </div>
-
   <div class="top-search">
     <div class="search-sp">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;color:var(--mu2)">
         <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5"/>
         <line x1="10.5" y1="10.5" x2="14" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
-      <input type="text" id="search" placeholder="Rechercher dans les flux…" oninput="onSearchInput()">
+      <input type="text" id="search" placeholder="Rechercher dans les flux…" oninput="render()">
     </div>
   </div>
-
   <div class="topbar-right">
-    <div class="view-switch">
-      <button class="view-btn on" id="viewBtnPresse" onclick="setViewMode('presse')">📰 Presse</button>
-      <button class="view-btn" id="viewBtnSante" onclick="setViewMode('sante')">❤️ Santé M365</button>
-    </div>
-
     <span class="last-ok" id="lastOk"></span>
     <span class="ts" id="ts">--:--</span>
-
     <button class="btn-actions" id="btnActions" onclick="toggleActions()">
       ⚡ Actions <span id="actCnt" style="background:#fff4ce;border-radius:9px;padding:1px 7px;font-size:11px;font-weight:700">0</span>
     </button>
-
     <button class="btn-scan" id="btnScan" onclick="startScan()">
       <span class="spin">⟳</span> Actualiser
     </button>
   </div>
 </div>
 
-<div class="subnav" id="subnav">
+<div class="subnav">
   <div class="snav-item on" onclick="setFilt(this,'prio','all');setSNav(this)">
     Toutes les actualités <span class="snav-cnt" id="sn-all">0</span>
   </div>
@@ -322,271 +246,181 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
   </select>
 </div>
 
-<div class="layout" id="mainLayout">
+<div class="layout">
 
-  <!-- VUE PRESSE -->
-  <div class="left" id="leftPanel">
-    <div class="sec">
-      <div class="sec-lbl">📊 Priorité</div>
-      <div class="nav on" onclick="setFilt(this,'prio','all')"><div class="nav-l"><div class="dot" style="background:#4a9eff"></div>Toutes</div><span class="cnt" id="p-all">0</span></div>
-      <div class="nav" onclick="setFilt(this,'prio','urgent')"><div class="nav-l"><div class="dot" style="background:#ff4757"></div>Urgent</div><span class="cnt" id="p-urgent">0</span></div>
-      <div class="nav" onclick="setFilt(this,'prio','critical')"><div class="nav-l"><div class="dot" style="background:#ff7f3f"></div>Critique</div><span class="cnt" id="p-critical">0</span></div>
-      <div class="nav" onclick="setFilt(this,'prio','important')"><div class="nav-l"><div class="dot" style="background:#ffc107"></div>Important</div><span class="cnt" id="p-important">0</span></div>
-      <div class="nav" onclick="setFilt(this,'prio','info')"><div class="nav-l"><div class="dot" style="background:#4a9eff"></div>Info</div><span class="cnt" id="p-info">0</span></div>
+<div class="left">
+  <div class="sec">
+    <div class="sec-lbl">📊 Priorité</div>
+    <div class="nav on" onclick="setFilt(this,'prio','all')"><div class="nav-l"><div class="dot" style="background:#4a9eff"></div>Toutes</div><span class="cnt" id="p-all">0</span></div>
+    <div class="nav" onclick="setFilt(this,'prio','urgent')"><div class="nav-l"><div class="dot" style="background:#ff4757"></div>Urgent</div><span class="cnt" id="p-urgent">0</span></div>
+    <div class="nav" onclick="setFilt(this,'prio','critical')"><div class="nav-l"><div class="dot" style="background:#ff7f3f"></div>Critique</div><span class="cnt" id="p-critical">0</span></div>
+    <div class="nav" onclick="setFilt(this,'prio','important')"><div class="nav-l"><div class="dot" style="background:#ffc107"></div>Important</div><span class="cnt" id="p-important">0</span></div>
+    <div class="nav" onclick="setFilt(this,'prio','info')"><div class="nav-l"><div class="dot" style="background:#4a9eff"></div>Info</div><span class="cnt" id="p-info">0</span></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sec">
+    <div class="sec-lbl">🏢 Microsoft</div>
+    <div class="nav" onclick="setFilt(this,'cat','ms')"><div class="nav-l"><div class="bar" style="background:#0078d4"></div>Microsoft (tout)</div><span class="cnt" id="c-ms">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','Message Center')"><div class="nav-l"><div class="bar" style="background:#ff6b35"></div>📬 Message Center</div><span class="cnt" id="c-Message Center">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','Roadmap M365')"><div class="nav-l"><div class="bar" style="background:#a855f7"></div>🗺 Roadmap M365</div><span class="cnt" id="c-Roadmap M365">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','SharePoint')"><div class="nav-l"><div class="bar" style="background:#0078d4"></div>SharePoint</div><span class="cnt" id="c-SharePoint">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','Teams')"><div class="nav-l"><div class="bar" style="background:#6264a7"></div>Teams</div><span class="cnt" id="c-Teams">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','Copilot')"><div class="nav-l"><div class="bar" style="background:#00b4d8"></div>Copilot</div><span class="cnt" id="c-Copilot">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','Microsoft 365')"><div class="nav-l"><div class="bar" style="background:#d83b01"></div>Microsoft 365</div><span class="cnt" id="c-Microsoft 365">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','Entra ID')"><div class="nav-l"><div class="bar" style="background:#4776e6"></div>Entra ID</div><span class="cnt" id="c-Entra ID">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','Intune')"><div class="nav-l"><div class="bar" style="background:#00897b"></div>Intune</div><span class="cnt" id="c-Intune">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','Exchange Online')"><div class="nav-l"><div class="bar" style="background:#0072c6"></div>Exchange Online</div><span class="cnt" id="c-Exchange Online">0</span></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sec">
+    <div class="sec-lbl">🇫🇷 Presse tech FR</div>
+    <div class="nav" onclick="setFilt(this,'cat','fr')"><div class="nav-l"><div class="bar" style="background:#22c55e"></div>Toutes FR</div><span class="cnt" id="c-fr">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','IT-Connect')"><div class="nav-l"><div class="bar" style="background:#22c55e"></div>IT-Connect</div><span class="cnt" id="c-IT-Connect">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','ZDNet')"><div class="nav-l"><div class="bar" style="background:#e11d48"></div>ZDNet France</div><span class="cnt" id="c-ZDNet">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','01net')"><div class="nav-l"><div class="bar" style="background:#f97316"></div>01net</div><span class="cnt" id="c-01net">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','Le Crabe Info')"><div class="nav-l"><div class="bar" style="background:#06b6d4"></div>Le Crabe Info</div><span class="cnt" id="c-Le Crabe Info">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','Cachem')"><div class="nav-l"><div class="bar" style="background:#8b5cf6"></div>Cachem</div><span class="cnt" id="c-Cachem">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','IT News')"><div class="nav-l"><div class="bar" style="background:#ec4899"></div>IT News Info</div><span class="cnt" id="c-IT News">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','CNETFrance')"><div class="nav-l"><div class="bar" style="background:#ff0000"></div>CNET France</div><span class="cnt" id="c-CNETFrance">0</span></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sec">
+    <div class="sec-lbl">🌍 Presse tech EN</div>
+    <div class="nav" onclick="setFilt(this,'cat','tech')"><div class="nav-l"><div class="bar" style="background:#ff8c00"></div>Toutes EN</div><span class="cnt" id="c-tech">0</span></div>
+    <div class="nav" onclick="setFilt(this,'cat','Ars Technica')"><div class="nav-l"><div class="bar" style="background:#ff8c00"></div>Ars Technica</div><span class="cnt" id="c-Ars Technica">0</span></div>
+  </div>
+</div>
+
+<div class="feed">
+  <div class="feed-top">
+    <div class="search-wrap" style="display:none"><input type="text"></div>
+    <div style="font-size:12px;color:var(--mu2);padding:2px 0" id="feed-label">Tous les articles</div>
+    <div style="flex:1"></div>
+  </div>
+
+  <div class="prog" id="prog"><div class="prog-fill" id="progFill"></div></div>
+  <div class="steps" id="steps"></div>
+  <div class="err-bar" id="errBar"></div>
+
+  <div id="actionsPanel" style="display:none;padding:12px 13px;border-bottom:1px solid var(--b1);background:rgba(255,193,7,.03)">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+      <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:#ffc107">⚡ Actions requises par votre tenant</div>
+      <button onclick="toggleActions()" style="background:none;border:1px solid var(--b1);border-radius:5px;color:var(--mu2);cursor:pointer;padding:3px 8px;font-size:11px">✕ Fermer</button>
     </div>
-
-    <div class="divider"></div>
-
-    <div class="sec">
-      <div class="sec-lbl">🏢 Microsoft</div>
-      <div class="nav" onclick="setFilt(this,'cat','ms')"><div class="nav-l"><div class="bar" style="background:#0078d4"></div>Microsoft (tout)</div><span class="cnt" id="c-ms">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','Message Center')"><div class="nav-l"><div class="bar" style="background:#ff6b35"></div>📬 Message Center</div><span class="cnt" id="c-Message Center">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','Roadmap M365')"><div class="nav-l"><div class="bar" style="background:#a855f7"></div>🗺 Roadmap M365</div><span class="cnt" id="c-Roadmap M365">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','SharePoint')"><div class="nav-l"><div class="bar" style="background:#0078d4"></div>SharePoint</div><span class="cnt" id="c-SharePoint">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','Teams')"><div class="nav-l"><div class="bar" style="background:#6264a7"></div>Teams</div><span class="cnt" id="c-Teams">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','Copilot')"><div class="nav-l"><div class="bar" style="background:#00b4d8"></div>Copilot</div><span class="cnt" id="c-Copilot">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','Microsoft 365')"><div class="nav-l"><div class="bar" style="background:#d83b01"></div>Microsoft 365</div><span class="cnt" id="c-Microsoft 365">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','Entra ID')"><div class="nav-l"><div class="bar" style="background:#4776e6"></div>Entra ID</div><span class="cnt" id="c-Entra ID">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','Intune')"><div class="nav-l"><div class="bar" style="background:#00897b"></div>Intune</div><span class="cnt" id="c-Intune">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','Exchange Online')"><div class="nav-l"><div class="bar" style="background:#0072c6"></div>Exchange Online</div><span class="cnt" id="c-Exchange Online">0</span></div>
+    <div style="font-size:11px;color:var(--mu2);margin-bottom:12px;line-height:1.6">
+      Ces articles détectés dans vos flux requièrent une action administrative. Chaque préconisation est basée sur le contenu officiel Microsoft.
     </div>
+    <div id="actionsList"></div>
+  </div>
 
-    <div class="divider"></div>
-
-    <div class="sec">
-      <div class="sec-lbl">🇫🇷 Presse tech FR</div>
-      <div class="nav" onclick="setFilt(this,'cat','fr')"><div class="nav-l"><div class="bar" style="background:#22c55e"></div>Toutes FR</div><span class="cnt" id="c-fr">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','IT-Connect')"><div class="nav-l"><div class="bar" style="background:#22c55e"></div>IT-Connect</div><span class="cnt" id="c-IT-Connect">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','ZDNet')"><div class="nav-l"><div class="bar" style="background:#e11d48"></div>ZDNet France</div><span class="cnt" id="c-ZDNet">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','01net')"><div class="nav-l"><div class="bar" style="background:#f97316"></div>01net</div><span class="cnt" id="c-01net">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','Le Crabe Info')"><div class="nav-l"><div class="bar" style="background:#06b6d4"></div>Le Crabe Info</div><span class="cnt" id="c-Le Crabe Info">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','Cachem')"><div class="nav-l"><div class="bar" style="background:#8b5cf6"></div>Cachem</div><span class="cnt" id="c-Cachem">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','IT News')"><div class="nav-l"><div class="bar" style="background:#ec4899"></div>IT News Info</div><span class="cnt" id="c-IT News">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','CNETFrance')"><div class="nav-l"><div class="bar" style="background:#ff0000"></div>CNET France</div><span class="cnt" id="c-CNETFrance">0</span></div>
+  <div class="cards" id="cards">
+    <div class="empty">
+      <div class="empty-ico">📡</div>
+      <p style="line-height:1.9">
+        Cliquez sur <strong>Actualiser les flux</strong><br>
+        pour charger <strong>18 sources</strong> M365 + presse FR + EN<br><br>
+        <span style="font-size:10px;color:var(--mu)">✅ 100% gratuit — aucune clé API</span>
+      </p>
     </div>
+  </div>
+</div>
 
-    <div class="divider"></div>
-
-    <div class="sec">
-      <div class="sec-lbl">🌍 Presse tech EN</div>
-      <div class="nav" onclick="setFilt(this,'cat','tech')"><div class="nav-l"><div class="bar" style="background:#ff8c00"></div>Toutes EN</div><span class="cnt" id="c-tech">0</span></div>
-      <div class="nav" onclick="setFilt(this,'cat','Ars Technica')"><div class="nav-l"><div class="bar" style="background:#ff8c00"></div>Ars Technica</div><span class="cnt" id="c-Ars Technica">0</span></div>
+<div class="right">
+  <div style="margin-bottom:18px">
+    <div class="rp-title">📊 Statistiques</div>
+    <div class="stat-box">
+      <div class="stat-row"><span style="color:var(--mu2)">Articles</span><span class="stat-val" id="s-total" style="color:var(--teal2)">0</span></div>
+      <div class="stat-row"><span style="color:var(--mu2)">🔴 Urgents</span><span class="stat-val" id="s-urg" style="color:#ff4757">0</span></div>
+      <div class="stat-row"><span style="color:var(--mu2)">🟠 Critiques</span><span class="stat-val" id="s-crit" style="color:#ff7f3f">0</span></div>
+      <div class="stat-row"><span style="color:var(--mu2)">⚡ Actions</span><span class="stat-val" id="s-act" style="color:#ffc107">0</span></div>
+      <div class="stat-row"><span style="color:var(--mu2)">📬 Message Center</span><span class="stat-val" id="s-mc" style="color:#ff6b35">0</span></div>
+      <div class="stat-row"><span style="color:var(--mu2)">🗺 Roadmap</span><span class="stat-val" id="s-rm" style="color:#a855f7">0</span></div>
+      <div class="stat-row"><span style="color:var(--mu2)">🇫🇷 Sources FR</span><span class="stat-val" id="s-fr" style="color:#22c55e">0</span></div>
+      <div class="stat-row"><span style="color:var(--mu2)">🌍 Sources EN</span><span class="stat-val" id="s-tech" style="color:#ff8c00">0</span></div>
     </div>
   </div>
 
-  <div class="feed" id="feedPanel">
-    <div class="feed-top">
-      <div style="font-size:12px;color:var(--mu2);padding:2px 0" id="feed-label">Tous les articles</div>
-      <div style="flex:1"></div>
-    </div>
-
-    <div class="prog" id="prog"><div class="prog-fill" id="progFill"></div></div>
-    <div class="steps" id="steps"></div>
-    <div class="err-bar" id="errBar"></div>
-
-    <div id="actionsPanel" style="display:none;padding:12px 13px;border-bottom:1px solid var(--b1);background:rgba(255,193,7,.03)">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:#835b00">⚡ Actions requises par votre tenant</div>
-        <button onclick="toggleActions()" style="background:none;border:1px solid var(--b1);border-radius:5px;color:var(--mu2);cursor:pointer;padding:3px 8px;font-size:11px">✕ Fermer</button>
-      </div>
-      <div style="font-size:11px;color:var(--mu2);margin-bottom:12px;line-height:1.6">
-        Ces articles détectés dans vos flux requièrent une action administrative. Chaque préconisation est basée sur le contenu officiel Microsoft.
-      </div>
-      <div id="actionsList"></div>
-    </div>
-
-    <div class="cards" id="cards">
-      <div class="empty">
-        <div class="empty-ico">📡</div>
-        <p style="line-height:1.9">
-          Cliquez sur <strong>Actualiser</strong><br>
-          pour charger les flux Microsoft, presse FR et EN<br><br>
-          <span style="font-size:10px;color:var(--mu)">Aucune clé API requise</span>
-        </p>
-      </div>
-    </div>
+  <div style="margin-bottom:18px">
+    <div class="rp-title">🔗 Liens officiels Microsoft</div>
+    <a href="https://www.microsoft.com/fr-FR/microsoft-365/roadmap#Roadmap" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
+      <span style="font-size:16px">🗺</span>
+      <div><div style="font-weight:600;color:var(--teal)">Roadmap M365 officielle</div><div style="font-size:10px;color:var(--mu2)">microsoft.com/roadmap</div></div>
+      <span style="margin-left:auto;color:var(--mu2)">↗</span>
+    </a>
+    <a href="https://admin.microsoft.com/Adminportal/Home#/MessageCenter" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
+      <span style="font-size:16px">📬</span>
+      <div><div style="font-weight:600;color:var(--teal)">Message Center</div><div style="font-size:10px;color:var(--mu2)">admin.microsoft.com</div></div>
+      <span style="margin-left:auto;color:var(--mu2)">↗</span>
+    </a>
+    <a href="https://admin.microsoft.com/Adminportal/Home#/servicehealth" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
+      <span style="font-size:16px">❤️</span>
+      <div><div style="font-weight:600;color:var(--teal)">Service Health</div><div style="font-size:10px;color:var(--mu2)">admin.microsoft.com</div></div>
+      <span style="margin-left:auto;color:var(--mu2)">↗</span>
+    </a>
+    <a href="https://security.microsoft.com/securescore" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
+      <span style="font-size:16px">🛡</span>
+      <div><div style="font-weight:600;color:var(--teal)">Secure Score</div><div style="font-size:10px;color:var(--mu2)">security.microsoft.com</div></div>
+      <span style="margin-left:auto;color:var(--mu2)">↗</span>
+    </a>
+    <a href="https://status.cloud.microsoft/m365/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
+      <span style="font-size:16px">📊</span>
+      <div><div style="font-weight:600;color:var(--teal)">Status M365</div><div style="font-size:10px;color:var(--mu2)">status.cloud.microsoft</div></div>
+      <span style="margin-left:auto;color:var(--mu2)">↗</span>
+    </a>
+    <a href="https://www.cert.ssi.gouv.fr/alerte/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:3px;color:var(--tx);font-size:12px;text-decoration:none;margin-bottom:4px;font-weight:500">
+      <span style="font-size:16px">🇫🇷</span>
+      <div><div style="font-weight:600;color:var(--teal)">CERT-FR Alertes</div><div style="font-size:10px;color:var(--mu2)">cert.ssi.gouv.fr</div></div>
+      <span style="margin-left:auto;color:var(--mu2)">↗</span>
+    </a>
   </div>
 
-  <div class="right" id="rightPanel">
-    <div style="margin-bottom:18px">
-      <div class="rp-title">📊 Statistiques</div>
-      <div class="stat-box">
-        <div class="stat-row"><span style="color:var(--mu2)">Articles</span><span class="stat-val" id="s-total" style="color:var(--teal2)">0</span></div>
-        <div class="stat-row"><span style="color:var(--mu2)">🔴 Urgents</span><span class="stat-val" id="s-urg" style="color:#ff4757">0</span></div>
-        <div class="stat-row"><span style="color:var(--mu2)">🟠 Critiques</span><span class="stat-val" id="s-crit" style="color:#ff7f3f">0</span></div>
-        <div class="stat-row"><span style="color:var(--mu2)">⚡ Actions</span><span class="stat-val" id="s-act" style="color:#ffc107">0</span></div>
-        <div class="stat-row"><span style="color:var(--mu2)">📬 Message Center</span><span class="stat-val" id="s-mc" style="color:#ff6b35">0</span></div>
-        <div class="stat-row"><span style="color:var(--mu2)">🗺 Roadmap</span><span class="stat-val" id="s-rm" style="color:#a855f7">0</span></div>
-        <div class="stat-row"><span style="color:var(--mu2)">🇫🇷 Sources FR</span><span class="stat-val" id="s-fr" style="color:#22c55e">0</span></div>
-        <div class="stat-row"><span style="color:var(--mu2)">🌍 Sources EN</span><span class="stat-val" id="s-tech" style="color:#ff8c00">0</span></div>
-      </div>
+  <div style="margin-bottom:18px">
+    <div class="rp-title" style="display:flex;justify-content:space-between">
+      <span>💚 Santé M365</span>
+      <span id="svcTs" style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono',monospace"></span>
     </div>
-
-    <div style="margin-bottom:18px">
-      <div class="rp-title">🔗 Liens officiels Microsoft</div>
-      <a href="https://www.microsoft.com/fr-FR/microsoft-365/roadmap#Roadmap" target="_blank" rel="noopener" class="health-link" style="margin-bottom:4px">
-        <span style="font-size:16px">🗺</span>
-        <div><div class="ttl">Roadmap M365 officielle</div><div class="sub">microsoft.com/roadmap</div></div>
-        <span style="margin-left:auto;color:var(--mu2)">↗</span>
-      </a>
-      <a href="https://admin.microsoft.com/Adminportal/Home#/MessageCenter" target="_blank" rel="noopener" class="health-link" style="margin-bottom:4px">
-        <span style="font-size:16px">📬</span>
-        <div><div class="ttl">Message Center</div><div class="sub">admin.microsoft.com</div></div>
-        <span style="margin-left:auto;color:var(--mu2)">↗</span>
-      </a>
-      <a href="https://admin.microsoft.com/Adminportal/Home#/servicehealth" target="_blank" rel="noopener" class="health-link" style="margin-bottom:4px">
-        <span style="font-size:16px">❤️</span>
-        <div><div class="ttl">Service Health</div><div class="sub">admin.microsoft.com</div></div>
-        <span style="margin-left:auto;color:var(--mu2)">↗</span>
-      </a>
-      <a href="https://security.microsoft.com/securescore" target="_blank" rel="noopener" class="health-link" style="margin-bottom:4px">
-        <span style="font-size:16px">🛡</span>
-        <div><div class="ttl">Secure Score</div><div class="sub">security.microsoft.com</div></div>
-        <span style="margin-left:auto;color:var(--mu2)">↗</span>
-      </a>
-      <a href="https://status.cloud.microsoft/m365/" target="_blank" rel="noopener" class="health-link" style="margin-bottom:4px">
-        <span style="font-size:16px">📊</span>
-        <div><div class="ttl">Status M365</div><div class="sub">status.cloud.microsoft</div></div>
-        <span style="margin-left:auto;color:var(--mu2)">↗</span>
-      </a>
-      <a href="https://www.cert.ssi.gouv.fr/alerte/" target="_blank" rel="noopener" class="health-link" style="margin-bottom:4px">
-        <span style="font-size:16px">🇫🇷</span>
-        <div><div class="ttl">CERT-FR Alertes</div><div class="sub">cert.ssi.gouv.fr</div></div>
-        <span style="margin-left:auto;color:var(--mu2)">↗</span>
-      </a>
-    </div>
-
-    <div style="margin-bottom:18px">
-      <div class="rp-title" style="display:flex;justify-content:space-between">
-        <span>💚 Santé M365</span>
-        <span id="svcTs" style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono',monospace"></span>
-      </div>
-      <div style="font-size:10px;color:var(--mu);margin-bottom:8px">Cliquez pour les détails.</div>
-      <div id="svcCards"></div>
-      <a href="https://admin.microsoft.com/Adminportal/Home#/servicehealth" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:5px;padding:6px 10px;background:rgba(0,168,168,.05);border:1px solid rgba(0,168,168,.18);border-radius:7px;color:var(--teal2);font-size:11px;text-decoration:none;margin-top:7px">
-        ↗ Service Health Dashboard
-      </a>
-      <div style="font-size:9px;color:var(--mu);text-align:center;margin-top:4px;font-family:'IBM Plex Mono',monospace">connexion admin requise</div>
-    </div>
-
-    <div>
-      <div class="rp-title">🌐 Flux actifs</div>
-      <div style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono',monospace;padding:2px 8px;margin-bottom:3px">📬 ADMIN M365</div>
-      <div class="src-item">📬 Message Center (merill.net)</div>
-      <div class="src-item">🗺 Roadmap</div>
-
-      <div style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono',monospace;padding:2px 8px;margin:5px 0 3px">🏢 BLOGS MICROSOFT</div>
-      <div class="src-item">📁 SharePoint Blog</div>
-      <div class="src-item">💬 Teams Blog</div>
-      <div class="src-item">✨ Copilot Blog</div>
-      <div class="src-item">🟥 Microsoft 365 Blog</div>
-      <div class="src-item">🔐 Entra ID Blog</div>
-      <div class="src-item">📱 Intune Blog</div>
-      <div class="src-item">📧 Exchange Blog</div>
-
-      <div style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono',monospace;padding:2px 8px;margin:5px 0 3px">🇫🇷 PRESSE FR</div>
-      <div class="src-item">🔧 IT-Connect.fr</div>
-      <div class="src-item">📰 ZDNet France</div>
-      <div class="src-item">💻 01net.com</div>
-      <div class="src-item">🦀 Le Crabe Info</div>
-      <div class="src-item">☁️ Cachem.fr</div>
-      <div class="src-item">📡 IT News Info</div>
-      <div class="src-item">🔴 CNET France</div>
-
-      <div style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono',monospace;padding:2px 8px;margin:5px 0 3px">🌍 PRESSE EN</div>
-      <div class="src-item">🧠 Ars Technica</div>
-    </div>
+    <div style="font-size:10px;color:var(--mu);margin-bottom:8px">Cliquez pour les détails.</div>
+    <div id="svcCards"></div>
+    <a href="https://admin.microsoft.com/Adminportal/Home#/servicehealth" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:5px;padding:6px 10px;background:rgba(0,168,168,.05);border:1px solid rgba(0,168,168,.18);border-radius:7px;color:var(--teal2);font-size:11px;text-decoration:none;margin-top:7px">
+      ↗ Service Health Dashboard
+    </a>
+    <div style="font-size:9px;color:var(--mu);text-align:center;margin-top:4px;font-family:'IBM Plex Mono',monospace">⚠️ connexion admin requise</div>
   </div>
 
-  <!-- VUE SANTE -->
-  <div class="health-main" id="healthMain">
-    <div class="health-head">
-      <div class="health-head-title">
-        <h2>❤️ État de santé M365</h2>
-        <div style="font-size:11px;color:var(--mu2);font-family:'IBM Plex Mono',monospace" id="healthTs">màj --:--</div>
-      </div>
-      <div class="health-sub">
-        Vue synthétique basée sur les flux Microsoft, la presse spécialisée et les correspondances par service.
-        Cette vue permet une lecture rapide par workload : incidents, signaux faibles, statut estimé et liens d’administration.
-      </div>
-    </div>
+  <div>
+    <div class="rp-title">🌐 Flux actifs (18)</div>
+    <div style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono',monospace;padding:2px 8px;margin-bottom:3px">📬 ADMIN M365</div>
+    <div class="src-item">📬 Message Center (merill.net)</div>
+    <div class="src-item">🗺 Roadmap (cloudscout.one)</div>
 
-    <div class="health-body">
-      <div class="kpi-grid">
-        <div class="kpi">
-          <div class="kpi-label">Services suivis</div>
-          <div class="kpi-value" id="hk-services">0</div>
-          <div class="kpi-sub">SharePoint, Teams, Copilot, Exchange, Entra ID, Intune, suite M365</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Services en alerte</div>
-          <div class="kpi-value" id="hk-alerts" style="color:#e87722">0</div>
-          <div class="kpi-sub">Au moins un article urgent ou critique détecté</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Incidents détectés</div>
-          <div class="kpi-value" id="hk-incidents" style="color:#d13438">0</div>
-          <div class="kpi-sub">Urgent + critique dans les flux corrélés</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Uptime moyen</div>
-          <div class="kpi-value" id="hk-uptime" style="color:var(--teal2)">0%</div>
-          <div class="kpi-sub">Référence locale de lecture rapide</div>
-        </div>
-      </div>
+    <div style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono',monospace;padding:2px 8px;margin:5px 0 3px">🏢 BLOGS MICROSOFT</div>
+    <div class="src-item">📁 SharePoint Blog</div>
+    <div class="src-item">💬 Teams Blog</div>
+    <div class="src-item">✨ Copilot Blog</div>
+    <div class="src-item">🟥 Microsoft 365 Blog</div>
+    <div class="src-item">🔐 Entra ID Blog</div>
+    <div class="src-item">📱 Intune Blog</div>
+    <div class="src-item">📧 Exchange Blog</div>
 
-      <div class="health-grid">
-        <div class="panel">
-          <div class="panel-h">Services M365</div>
-          <div class="panel-b">
-            <div class="health-service-grid" id="healthSvcGrid"></div>
-          </div>
-        </div>
+    <div style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono',monospace;padding:2px 8px;margin:5px 0 3px">🇫🇷 PRESSE FR</div>
+    <div class="src-item">🔧 IT-Connect.fr</div>
+    <div class="src-item">📰 ZDNet France</div>
+    <div class="src-item">💻 01net.com</div>
+    <div class="src-item">🦀 Le Crabe Info</div>
+    <div class="src-item">☁️ Cachem.fr</div>
+    <div class="src-item">📡 IT News Info</div>
+    <div class="src-item">🔴 CNET France</div>
 
-        <div class="panel">
-          <div class="panel-h">Liens officiels</div>
-          <div class="panel-b">
-            <div class="health-links">
-              <a class="health-link" href="https://admin.microsoft.com/Adminportal/Home#/servicehealth" target="_blank" rel="noopener">
-                <span style="font-size:16px">❤️</span>
-                <div><div class="ttl">Service Health</div><div class="sub">Centre officiel Microsoft 365</div></div>
-              </a>
-              <a class="health-link" href="https://admin.microsoft.com/Adminportal/Home#/MessageCenter" target="_blank" rel="noopener">
-                <span style="font-size:16px">📬</span>
-                <div><div class="ttl">Message Center</div><div class="sub">Messages tenant et changements</div></div>
-              </a>
-              <a class="health-link" href="https://status.cloud.microsoft/m365/" target="_blank" rel="noopener">
-                <span style="font-size:16px">📊</span>
-                <div><div class="ttl">Status M365</div><div class="sub">Vue publique Microsoft</div></div>
-              </a>
-              <a class="health-link" href="https://security.microsoft.com/securescore" target="_blank" rel="noopener">
-                <span style="font-size:16px">🛡</span>
-                <div><div class="ttl">Secure Score</div><div class="sub">Sécurité et priorisation</div></div>
-              </a>
-              <a class="health-link" href="https://entra.microsoft.com/" target="_blank" rel="noopener">
-                <span style="font-size:16px">🔐</span>
-                <div><div class="ttl">Entra Admin Center</div><div class="sub">Identité et accès</div></div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="panel-h">Incidents et alertes détectés</div>
-          <div class="panel-b">
-            <div class="incident-list" id="healthIncidents"></div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="panel-h">Actions prioritaires</div>
-          <div class="panel-b">
-            <div id="healthActions"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div style="font-size:9px;color:var(--mu);font-family:'IBM Plex Mono',monospace;padding:2px 8px;margin:5px 0 3px">🌍 PRESSE EN</div>
+    <div class="src-item">🧠 Ars Technica</div>
   </div>
+</div>
 
 </div>
 
@@ -604,7 +438,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
       </div>
 
       <div class="modal-sec" id="mincidents-sec" style="display:none">
-        <div class="modal-sec-h" style="color:#a4262c;border-bottom:1px solid #fde7e9">⚠️ Incidents / alertes détectés</div>
+        <div class="modal-sec-h" style="color:#a4262c;border-bottom:1px solid #fde7e9">⚠️ INCIDENTS / ALERTES DÉTECTÉS DANS VOS FLUX</div>
         <div id="mincidents"></div>
       </div>
 
@@ -614,7 +448,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--tx);font-
       </div>
 
       <div class="modal-sec" id="mrss-sec" style="display:none">
-        <div class="modal-sec-h">📰 Articles RSS liés à ce service</div>
+        <div class="modal-sec-h">📰 ARTICLES RSS LIÉS À CE SERVICE</div>
         <div id="mrss"></div>
       </div>
 
@@ -678,20 +512,20 @@ const CAT_RULES = [
    words:["entra","azure ad","azure active directory","conditional access","accès conditionnel","mfa","passkey","fido","zero trust","privileged identity","pim","ransomware","phishing","hameçonnage","cyberattaque","faille critique","cve-","vulnerability","malware","breach","zero-day","sentinel","defender for identity"]},
 
   {cat:"SharePoint", color:"#0078d4", emo:"📁",
-   words:["sharepoint","spfx","viva connections","viva engage","intranet","webpart","hub site","sharepoint online","onedrive"]},
+   words:["sharepoint","spfx","viva connections","viva engage","intranet","webpart","hub site","sharepoint online"]},
 
   {cat:"Teams", color:"#6264a7", emo:"💬",
    words:["microsoft teams","ms teams","teams meeting","teams room","teams phone","town hall","teams webinar","teams premium"]},
 
   {cat:"Exchange Online", color:"#0072c6", emo:"📧",
-   words:["exchange online","mail flow","mailbox","outlook web","owa","smtp","dkim","dmarc","exchange","outlook"]},
+   words:["exchange online","mail flow","mailbox","outlook web","owa","smtp","dkim","dmarc","exchange"]},
 
   {cat:"Microsoft 365", color:"#d83b01", emo:"🟥",
-   words:["microsoft 365","office 365","m365 ","office365","microsoft loop","forms","planner","whiteboard","stream","yammer","viva"]},
+   words:["microsoft 365","office 365","m365 ","office365","microsoft loop","onedrive","forms","planner","whiteboard","stream","yammer","viva"]},
 ];
 
 function classifyText(text) {
-  const t = (text || "").toLowerCase();
+  const t = text.toLowerCase();
   for (const r of CAT_RULES) {
     for (const w of r.words) {
       if (t.includes(w)) return r;
@@ -708,7 +542,7 @@ const P_CRIT = ["end of life","end of support","retirement","action required","b
 const P_IMP  = ["generally available","public preview","new feature","rolling out","introducing","announcing","update","nouvelle fonctionnalité","disponible","annonce","nouveauté","roadmap","in development"];
 
 function getPrio(t) {
-  const s = (t || "").toLowerCase();
+  const s = t.toLowerCase();
   if (P_URG.some(k=>s.includes(k))) return "urgent";
   if (P_CRIT.some(k=>s.includes(k))) return "critical";
   if (P_IMP.some(k=>s.includes(k))) return "important";
@@ -716,7 +550,7 @@ function getPrio(t) {
 }
 
 function isAction(t) {
-  return ["action required","deadline","fin de support","migration obligatoire","mandatory","you must","retire before"].some(k=>(t || "").toLowerCase().includes(k));
+  return ["action required","deadline","fin de support","migration obligatoire","mandatory","you must","retire before"].some(k=>t.toLowerCase().includes(k));
 }
 
 const PLBL = {urgent:"🔴 URGENT", critical:"🟠 CRITIQUE", important:"🟡 IMPORTANT", info:"🔵 INFO"};
@@ -726,11 +560,10 @@ const PORD = {urgent:0, critical:1, important:2, info:3};
 function fmtDate(s) {
   try {
     const d = new Date(s), n = new Date(), df = Math.floor((n-d)/1000);
-    if (isNaN(d.getTime())) return "";
-    if (df < 3600) return "Il y a " + Math.max(1, Math.floor(df/60)) + " min";
-    if (df < 86400) return "Il y a " + Math.floor(df/3600) + " h";
+    if (df < 3600) return "Il y a "+Math.floor(df/60)+"min";
+    if (df < 86400) return "Il y a "+Math.floor(df/3600)+"h";
     if (df < 172800) return "Hier";
-    if (df < 604800) return "Il y a " + Math.floor(df/86400) + " j";
+    if (df < 604800) return "Il y a "+Math.floor(df/86400)+"j";
     return d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"});
   } catch(e){ return ""; }
 }
@@ -738,7 +571,7 @@ function fmtDate(s) {
 // ═══════════════════════════════════════════════
 // FETCH
 // ═══════════════════════════════════════════════
-const CACHE_KEY = 'adminwatch_cache_v2';
+const CACHE_KEY = 'adminwatch_cache';
 const CACHE_TTL = 30 * 60 * 1000;
 
 const PROXIES = [
@@ -762,7 +595,7 @@ function cacheSet(url, data) {
     const c = JSON.parse(sessionStorage.getItem(CACHE_KEY)||'{}');
     c[url] = {ts:Date.now(), data};
     const keys = Object.keys(c);
-    if (keys.length > 50) delete c[keys[0]];
+    if (keys.length > 40) delete c[keys[0]];
     sessionStorage.setItem(CACHE_KEY, JSON.stringify(c));
   } catch(e){}
 }
@@ -779,7 +612,7 @@ async function fetchRSS(url) {
   if (cached) return cached;
 
   const attempts = PROXIES.map(async px => {
-    const r = await timedFetch(px.fn(url), 9000);
+    const r = await timedFetch(px.fn(url), 7000);
     if (!r.ok) throw new Error('not ok');
     const txt = px.json ? ((await r.json()).contents||'') : await r.text();
     if (!txt || (!txt.includes('<item') && !txt.includes('<entry'))) throw new Error('vide');
@@ -796,7 +629,10 @@ async function fetchRSS(url) {
 // ═══════════════════════════════════════════════
 function parseRSS(xml, src) {
   const doc = new DOMParser().parseFromString(xml, "text/xml");
+
+  // IMPORTANT : on prend tout le flux exposé, sans slice(0,8)
   const items = Array.from(doc.querySelectorAll("item, entry"));
+
   if (!items.length) throw new Error("vide");
 
   return items.map((item) => {
@@ -804,7 +640,7 @@ function parseRSS(xml, src) {
       const el = item.querySelector(tag);
       if (!el) return "";
       if (tag==="link" && !el.textContent.trim()) return el.getAttribute("href") || "";
-      return (el.textContent || "").trim();
+      return el.textContent.trim();
     };
 
     const title   = get("title");
@@ -821,7 +657,7 @@ function parseRSS(xml, src) {
 
     const rawDate = get("pubDate") || get("published") || get("updated");
     const cats    = Array.from(item.querySelectorAll("category")).map(c=>c.textContent).join(" ");
-    const fullText = title + " " + desc + " " + cats;
+    const fullText = title+" "+desc+" "+cats;
 
     let cat = src.cat, color = src.color, emo = src.emo, origCat = src.cat;
 
@@ -859,51 +695,6 @@ let allNews = [];
 let fPrio = "all";
 let fCat  = "all";
 let actionsOpen = false;
-let viewMode = "presse";
-
-function onSearchInput(){
-  if (viewMode === "presse") render();
-  else renderHealthView();
-}
-
-function setViewMode(mode){
-  viewMode = mode;
-
-  const btnP = document.getElementById("viewBtnPresse");
-  const btnS = document.getElementById("viewBtnSante");
-  const subnav = document.getElementById("subnav");
-  const layout = document.getElementById("mainLayout");
-
-  const left = document.getElementById("leftPanel");
-  const feed = document.getElementById("feedPanel");
-  const right = document.getElementById("rightPanel");
-  const health = document.getElementById("healthMain");
-
-  btnP.classList.toggle("on", mode==="presse");
-  btnS.classList.toggle("on", mode==="sante");
-
-  if(mode==="presse"){
-    subnav.classList.remove("hidden");
-    layout.classList.remove("no-subnav");
-    left.classList.remove("hidden");
-    feed.classList.remove("hidden");
-    right.classList.remove("hidden");
-    health.classList.remove("on");
-    health.classList.add("hidden");
-    document.getElementById("btnActions").style.display = "flex";
-    render();
-  } else {
-    subnav.classList.add("hidden");
-    layout.classList.add("no-subnav");
-    left.classList.add("hidden");
-    feed.classList.add("hidden");
-    right.classList.add("hidden");
-    health.classList.remove("hidden");
-    health.classList.add("on");
-    document.getElementById("btnActions").style.display = "none";
-    renderHealthView();
-  }
-}
 
 function setFilt(el, type, val) {
   if (type==="prio") {
@@ -911,9 +702,8 @@ function setFilt(el, type, val) {
   } else {
     fCat = val;
   }
-
   document.querySelectorAll(".nav").forEach(e=>e.classList.remove("on"));
-  if(el && el.classList.contains("nav")) el.classList.add("on");
+  el.classList.add("on");
   updateFeedLabel();
   render();
 }
@@ -948,10 +738,7 @@ function updateFeedLabel() {
 
 // Horloge
 setInterval(()=>{
-  const now = new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
-  document.getElementById("ts").textContent = now;
-  const hts = document.getElementById("healthTs");
-  if(hts) hts.textContent = "màj " + now;
+  document.getElementById("ts").textContent = new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
 },1000);
 document.getElementById("ts").textContent = new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
 
@@ -979,7 +766,6 @@ async function startScan() {
   async function loadOne(src,i) {
     ss[i].st = "active";
     drawSteps(ss);
-
     try {
       const xml = await fetchRSS(src.url);
       const items = parseRSS(xml,src);
@@ -989,17 +775,13 @@ async function startScan() {
       ss[i].st = "err";
       errors++;
     }
-
     done++;
     setProg(4 + Math.floor(done/SOURCES.length*90));
     drawSteps(ss);
-
     if(allNews.length>0){
       dedup();
       updateCounts();
-      drawSvcCards();
-      renderHealthView();
-      if (viewMode === "presse") render();
+      render();
     }
   }
 
@@ -1007,10 +789,7 @@ async function startScan() {
 
   dedup();
   updateCounts();
-  drawSvcCards();
-  renderHealthView();
   render();
-
   setProg(100);
   setTimeout(()=>{hideProg();hideSteps();},2000);
 
@@ -1028,7 +807,7 @@ async function startScan() {
   btn.classList.remove("spinning");
   btn.innerHTML = '<span class="spin">⟳</span> Actualiser';
 
-  if(viewMode==="sante") renderHealthView();
+  drawSvcCards();
 }
 
 function dedup() {
@@ -1043,7 +822,7 @@ function dedup() {
 }
 
 // ═══════════════════════════════════════════════
-// RENDER PRESSE
+// RENDER
 // ═══════════════════════════════════════════════
 function render() {
   let data = [...allNews];
@@ -1260,24 +1039,17 @@ function matchSvc(n, svc) {
   return svc.kw.some(k => t.includes(k));
 }
 
-function getSvcIncidents(svc){
-  return allNews.filter(n=>{
-    if(n.priority!=="urgent" && n.priority!=="critical") return false;
-    return matchSvc(n, svc);
-  });
-}
-
-function getSvcRelated(svc){
-  return allNews.filter(n=>matchSvc(n, svc));
-}
-
 function drawSvcCards() {
   const el = document.getElementById("svcCards");
   if (!el) return;
   el.innerHTML = "";
 
   SVCS.forEach(svc=>{
-    const incidents = getSvcIncidents(svc);
+    const incidents = allNews.filter(n=>{
+      if(n.priority!=="urgent" && n.priority!=="critical") return false;
+      return matchSvc(n, svc);
+    });
+
     const st = incidents.length>0 ? "warn" : "ok";
     const stLbl = incidents.length>0 ? incidents.length+" INCIDENT"+(incidents.length>1?"S":"") : "OPÉRATIONNEL";
 
@@ -1326,7 +1098,7 @@ function drawSvcCards() {
 
     if (incidents.length>0) {
       const inc = document.createElement("div");
-      inc.style.cssText="font-size:10px;color:#835b00;margin-top:5px;padding:3px 6px;background:rgba(255,193,7,.08);border-left:2px solid #ffc107;border-radius:3px";
+      inc.style.cssText="font-size:10px;color:#ffc107;margin-top:5px;padding:3px 6px;background:rgba(255,193,7,.06);border-left:2px solid #ffc107;border-radius:3px";
       inc.textContent = "⚠ " + incidents[0].title.substring(0,55) + (incidents[0].title.length>55?"…":"");
       card.appendChild(inc);
     }
@@ -1343,242 +1115,16 @@ function drawSvcCards() {
   if (ts) ts.textContent = "màj " + new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
 }
 
-function renderHealthView(){
-  const grid = document.getElementById("healthSvcGrid");
-  const incWrap = document.getElementById("healthIncidents");
-  const actWrap = document.getElementById("healthActions");
-
-  if(!grid || !incWrap || !actWrap) return;
-
-  const q = document.getElementById("search").value.toLowerCase().trim();
-
-  let services = [...SVCS];
-  if(q){
-    services = services.filter(s=>{
-      const blob = [s.name,s.desc,...s.features,...s.kw].join(" ").toLowerCase();
-      return blob.includes(q);
-    });
-  }
-
-  const totalIncidents = allNews.filter(n=>n.priority==="urgent"||n.priority==="critical").length;
-  const servicesWithAlerts = SVCS.filter(s=>getSvcIncidents(s).length>0).length;
-  const avgUptime = SVCS.length ? (SVCS.reduce((a,b)=>a+b.uptime,0)/SVCS.length).toFixed(2) : "0.00";
-
-  document.getElementById("hk-services").textContent = SVCS.length;
-  document.getElementById("hk-alerts").textContent = servicesWithAlerts;
-  document.getElementById("hk-incidents").textContent = totalIncidents;
-  document.getElementById("hk-uptime").textContent = avgUptime + "%";
-  document.getElementById("healthTs").textContent = "màj " + new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
-
-  grid.innerHTML = "";
-  if(!services.length){
-    grid.innerHTML = '<div class="health-empty" style="grid-column:1/-1">Aucun service ne correspond à la recherche.</div>';
-  } else {
-    services.forEach(svc=>{
-      const incidents = getSvcIncidents(svc);
-      const related = getSvcRelated(svc);
-      const st = incidents.length>0 ? "warn" : "ok";
-
-      const card = document.createElement("div");
-      card.className = "health-svc";
-      card.onclick = ()=>openSvcModal(svc.id);
-
-      const top = document.createElement("div");
-      top.className = "health-svc-top";
-
-      const nameWrap = document.createElement("div");
-
-      const name = document.createElement("div");
-      name.className = "health-svc-name";
-      name.textContent = svc.emo + " " + svc.name;
-
-      const meta = document.createElement("div");
-      meta.className = "health-svc-meta";
-      meta.textContent = svc.desc;
-
-      nameWrap.appendChild(name);
-      nameWrap.appendChild(meta);
-
-      const tag = document.createElement("span");
-      tag.className = "svc-st " + st;
-      tag.textContent = incidents.length ? (incidents.length+" incident"+(incidents.length>1?"s":"")) : "Opérationnel";
-
-      top.appendChild(nameWrap);
-      top.appendChild(tag);
-      card.appendChild(top);
-
-      const bar = document.createElement("div");
-      bar.className = "svc-upbar";
-      const fill = document.createElement("div");
-      fill.className = "svc-upfill";
-      fill.style.width = svc.uptime + "%";
-      fill.style.background = incidents.length ? "#ffc107" : "#22c55e";
-      bar.appendChild(fill);
-      card.appendChild(bar);
-
-      const row1 = document.createElement("div");
-      row1.className = "health-svc-row";
-      row1.innerHTML = `<span>Uptime 30j</span><strong>${svc.uptime}%</strong>`;
-      card.appendChild(row1);
-
-      const row2 = document.createElement("div");
-      row2.className = "health-svc-row";
-      row2.innerHTML = `<span>Articles liés</span><strong>${related.length}</strong>`;
-      card.appendChild(row2);
-
-      if(incidents.length){
-        const warn = document.createElement("div");
-        warn.className = "health-svc-inc";
-        warn.textContent = incidents[0].title.length > 90 ? incidents[0].title.substring(0,90)+"…" : incidents[0].title;
-        card.appendChild(warn);
-      } else {
-        const ok = document.createElement("div");
-        ok.className = "health-svc-ok";
-        ok.textContent = "Aucune alerte urgente ou critique détectée dans les flux corrélés.";
-        card.appendChild(ok);
-      }
-
-      grid.appendChild(card);
-    });
-  }
-
-  const incidents = [...allNews]
-    .filter(n=>n.priority==="urgent" || n.priority==="critical")
-    .filter(n=>{
-      if(!q) return true;
-      return (n.title+n.summary+n.source+n.cat).toLowerCase().includes(q);
-    })
-    .sort((a,b)=>PORD[a.priority]-PORD[b.priority] || new Date(b.rawDate||0)-new Date(a.rawDate||0));
-
-  incWrap.innerHTML = "";
-  if(!incidents.length){
-    incWrap.innerHTML = '<div class="health-empty">Aucune alerte urgente ou critique détectée.</div>';
-  } else {
-    incidents.slice(0,12).forEach(n=>{
-      const div = document.createElement("div");
-      div.className = "incident " + n.priority;
-
-      const head = document.createElement("div");
-      head.className = "incident-head";
-
-      const title = document.createElement("div");
-      title.className = "incident-title";
-      title.textContent = n.title;
-
-      const date = document.createElement("div");
-      date.className = "incident-meta";
-      date.textContent = n.date || "";
-
-      head.appendChild(title);
-      head.appendChild(date);
-      div.appendChild(head);
-
-      const badges = document.createElement("div");
-      badges.className = "badges";
-      mkBadge(badges, PLBL[n.priority], PCLR[n.priority]);
-      mkBadge(badges, n.emo+" "+n.cat, n.color);
-      mkBadge(badges, "🔗 "+n.source, "#7a86a8");
-      div.appendChild(badges);
-
-      const sum = document.createElement("div");
-      sum.className = "incident-sum";
-      sum.style.marginTop = "8px";
-      sum.textContent = n.summary;
-      div.appendChild(sum);
-
-      const foot = document.createElement("div");
-      foot.className = "incident-foot";
-
-      const meta = document.createElement("div");
-      meta.className = "incident-meta";
-      meta.textContent = n.actionRequired ? "Action potentielle détectée" : "Signal de veille";
-
-      const a = document.createElement("a");
-      a.className = "read-btn";
-      a.href = n.link;
-      a.target = "_blank";
-      a.rel = "noopener";
-      a.textContent = "↗ Lire";
-
-      foot.appendChild(meta);
-      foot.appendChild(a);
-      div.appendChild(foot);
-
-      incWrap.appendChild(div);
-    });
-  }
-
-  const acts = allNews
-    .filter(n=>n.actionRequired)
-    .filter(n=>{
-      if(!q) return true;
-      return (n.title+n.summary+n.source+n.cat).toLowerCase().includes(q);
-    })
-    .sort((a,b)=>PORD[a.priority]-PORD[b.priority]);
-
-  actWrap.innerHTML = "";
-  if(!acts.length){
-    actWrap.innerHTML = '<div class="health-empty">Aucune action prioritaire détectée pour le filtre courant.</div>';
-  } else {
-    acts.slice(0,6).forEach(item=>{
-      const g = getActionGuide(item);
-      const box = document.createElement("div");
-      box.className = "action-card " + (item.priority==="urgent"?"urgent":item.priority==="critical"?"critical":"");
-
-      const tit = document.createElement("div");
-      tit.className = "action-title";
-      tit.style.marginBottom = "8px";
-      tit.textContent = item.title;
-      box.appendChild(tit);
-
-      const badges = document.createElement("div");
-      badges.className = "action-badges";
-      mkBadge(badges, PLBL[item.priority], PCLR[item.priority]);
-      mkBadge(badges, item.emo+" "+item.cat, item.color);
-      box.appendChild(badges);
-
-      const lvl = document.createElement("div");
-      lvl.className = "action-block";
-      lvl.innerHTML = `<div class="action-block-title">Niveau</div><div class="action-block-body"><strong>${g.level}</strong></div>`;
-      box.appendChild(lvl);
-
-      const preco = document.createElement("div");
-      preco.className = "action-block";
-      preco.innerHTML = `<div class="action-block-title">Préconisation</div><div class="action-block-body">${g.preconisation}</div>`;
-      box.appendChild(preco);
-
-      const links = document.createElement("div");
-      links.className = "action-links";
-
-      const a1 = document.createElement("a");
-      a1.className = "action-lnk primary";
-      a1.href = item.link;
-      a1.target = "_blank";
-      a1.rel = "noopener";
-      a1.textContent = "↗ Article original";
-
-      const a2 = document.createElement("a");
-      a2.className = "action-lnk sec";
-      a2.href = "https://admin.microsoft.com/Adminportal/Home#/MessageCenter";
-      a2.target = "_blank";
-      a2.rel = "noopener";
-      a2.textContent = "📬 Message Center";
-
-      links.appendChild(a1);
-      links.appendChild(a2);
-      box.appendChild(links);
-
-      actWrap.appendChild(box);
-    });
-  }
-}
-
 function openSvcModal(id) {
   const svc = SVCS.find(s=>s.id===id);
   if (!svc) return;
 
-  const incidents = getSvcIncidents(svc);
-  const related = getSvcRelated(svc);
+  const incidents = allNews.filter(n=>{
+    if(n.priority!=="urgent" && n.priority!=="critical") return false;
+    return matchSvc(n, svc);
+  });
+
+  const related = allNews.filter(n=>matchSvc(n, svc));
   const st = incidents.length>0 ? "warn" : "ok";
 
   const mh = document.getElementById("mh");
@@ -1587,7 +1133,7 @@ function openSvcModal(id) {
   const dot = document.createElement("div");
   dot.style.cssText="width:10px;height:10px;border-radius:50%;background:"+(st==="ok"?"#22c55e":"#ffc107")+";box-shadow:0 0 8px "+(st==="ok"?"rgba(34,197,94,.7)":"rgba(255,193,7,.7)");
   mh.appendChild(dot);
-  mh.appendChild(document.createTextNode(" " + svc.emo + " " + svc.name));
+  mh.appendChild(document.createTextNode(" "+svc.emo+" "+svc.name));
 
   document.getElementById("md").textContent = svc.desc;
 
@@ -1636,28 +1182,28 @@ function openSvcModal(id) {
       [
         {t:PLBL[n.priority], c:pc},
         {t:n.emo+" "+n.cat, c:n.color},
-        {t:"🔗 "+n.source, c:"#7a86a8"},
-        {t:n.date, c:"#605e5c"},
+        {t:"🔗 "+n.source, c:"var(--mu2)"},
+        {t:n.date, c:"var(--mu)"},
       ].forEach(b=>{
         const s = document.createElement("span");
         s.className = "b";
         s.textContent = b.t;
         s.style.color = b.c;
         s.style.border = "1px solid "+b.c+"44";
-        s.style.background = b.c+"12";
+        s.style.background = (b.c==="var(--mu2)" || b.c==="var(--mu)") ? "var(--s3)" : b.c+"15";
         brow.appendChild(s);
       });
 
       box.appendChild(brow);
 
       const tit = document.createElement("div");
-      tit.style.cssText="font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--tx);margin-bottom:6px;line-height:1.4";
+      tit.style.cssText="font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:#dde3f5;margin-bottom:6px;line-height:1.4";
       tit.textContent = n.title;
       box.appendChild(tit);
 
       if (n.summary) {
         const sum = document.createElement("div");
-        sum.style.cssText="font-size:11px;color:var(--mu);line-height:1.6;margin-bottom:8px";
+        sum.style.cssText="font-size:11px;color:#7a86a8;line-height:1.6;margin-bottom:8px";
         sum.textContent = n.summary;
         box.appendChild(sum);
       }
@@ -1679,7 +1225,7 @@ function openSvcModal(id) {
     });
   } else {
     incSec.style.display = "block";
-    incEl.innerHTML = '<div style="padding:10px 12px;background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.15);border-radius:7px;font-size:12px;color:#107c10">✅ Aucun incident détecté dans vos flux RSS pour ce service.</div>';
+    incEl.innerHTML = '<div style="padding:10px 12px;background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.15);border-radius:7px;font-size:12px;color:#22c55e">✅ Aucun incident détecté dans vos flux RSS pour ce service.</div>';
   }
 
   const mf = document.getElementById("mfeat");
@@ -1693,7 +1239,7 @@ function openSvcModal(id) {
     nm.textContent = f;
 
     const st2 = document.createElement("span");
-    st2.style.cssText="font-size:9px;color:#107c10;font-family:'IBM Plex Mono',monospace;padding:1px 6px;border-radius:3px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2)";
+    st2.style.cssText="font-size:9px;color:#22c55e;font-family:'IBM Plex Mono',monospace;padding:1px 6px;border-radius:3px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2)";
     st2.textContent = "✓ OK";
 
     row.appendChild(nm);
@@ -1740,7 +1286,7 @@ function openSvcModal(id) {
       left.appendChild(brow);
 
       const tit = document.createElement("div");
-      tit.style.cssText="font-size:12px;color:var(--tx);line-height:1.4;font-weight:600";
+      tit.style.cssText="font-size:12px;color:#dde3f5;line-height:1.4;font-weight:600";
       tit.textContent = n.title.length>90 ? n.title.substring(0,90)+"…" : n.title;
       left.appendChild(tit);
 
@@ -1761,7 +1307,7 @@ function openSvcModal(id) {
     if (otherRelated.length>6) {
       const more = document.createElement("div");
       more.style.cssText="font-size:10px;color:var(--mu);text-align:center;padding:5px;font-family:'IBM Plex Mono',monospace";
-      more.textContent = "+ " + (otherRelated.length-6) + " autres articles";
+      more.textContent = "+ "+(otherRelated.length-6)+" autres articles — filtrez par catégorie dans le feed";
       rssEl.appendChild(more);
     }
   } else {
@@ -1822,7 +1368,7 @@ function drawSteps(ss){
   ss.forEach(s=>{
     const d = document.createElement("div");
     d.className = "step"+(s.st==="done"?" done":s.st==="active"?" active":s.st==="err"?" err":"");
-    d.textContent = (s.st==="done"?"✓ ":s.st==="active"?"◎ ":s.st==="err"?"✕ ":"· ") + s.lbl;
+    d.textContent = (s.st==="done"?"✓ ":s.st==="active"?"◎ ":s.st==="err"?"✕ ":"· ")+s.lbl;
     el.appendChild(d);
   });
 }
@@ -1843,7 +1389,7 @@ const ACTION_GUIDES = [
     match:["retire","retirement","end of support","end of life","will be retired","fin de support","déprécié"],
     level:"🔴 Arrêt de service",
     preconisation:`Planifiez la migration avant la date de fin de support. Identifiez les utilisateurs et services impactés, testez la solution de remplacement en environnement pilote, communiquez aux utilisateurs les changements à venir. Consultez la feuille de route Microsoft pour les alternatives officielles.`,
-    steps:["1. Identifier les utilisateurs/workloads impactés","2. Consulter la documentation de migration officielle Microsoft","3. Tester la migration en pilote","4. Planifier le déploiement global avant la deadline","5. Communiquer aux utilisateurs"],
+    steps:["1. Identifier les utilisateurs/workloads impactés","2. Consulter la documentation de migration officielle Microsoft","3. Tester la migration en pilote (groupe restreint)","4. Planifier le déploiement global avant la deadline","5. Communiquer aux utilisateurs via Message Center"],
     links:[
       {lbl:"📋 Microsoft 365 Roadmap", href:"https://www.microsoft.com/fr-fr/microsoft-365/roadmap", type:"primary"},
       {lbl:"📚 Docs migration Microsoft", href:"https://learn.microsoft.com/fr-fr/microsoft-365/", type:"sec"},
@@ -1854,7 +1400,7 @@ const ACTION_GUIDES = [
     match:["action required","mandatory","migration obligatoire","you must","migrate before","deadline"],
     level:"⚡ Action obligatoire",
     preconisation:`Microsoft exige une action de votre part avant une date limite. Sans action, le service peut être désactivé ou le comportement modifié sans préavis. Consultez le Message Center de votre tenant pour les détails spécifiques à votre organisation.`,
-    steps:["1. Ouvrir le Message Center admin","2. Lire le message complet","3. Évaluer l'impact sur votre tenant","4. Planifier l'action","5. Documenter la mise en conformité"],
+    steps:["1. Ouvrir le Message Center admin (admin.microsoft.com)","2. Lire le message complet avec les détails techniques","3. Évaluer l'impact sur votre tenant Canopé","4. Planifier l'action (pilote → déploiement global)","5. Documenter la mise en conformité"],
     links:[
       {lbl:"📬 Message Center", href:"https://admin.microsoft.com/Adminportal/Home#/MessageCenter", type:"primary"},
       {lbl:"🛡 Centre d'administration M365", href:"https://admin.microsoft.com/", type:"primary"},
@@ -1864,8 +1410,8 @@ const ACTION_GUIDES = [
   {
     match:["cve-","vulnerability","zero-day","exploit","breach","ransomware","phishing","cyberattaque","faille"],
     level:"🚨 Sécurité critique",
-    preconisation:`Incident ou vulnérabilité de sécurité détecté. Appliquez immédiatement les correctifs disponibles. Vérifiez les journaux d'audit Entra ID et Microsoft Defender. Activez les alertes dans Microsoft Sentinel si disponible.`,
-    steps:["1. Vérifier le Secure Score","2. Appliquer le patch","3. Analyser les journaux de connexion","4. Vérifier les alertes Defender","5. Renforcer la MFA"],
+    preconisation:`Incident ou vulnérabilité de sécurité détecté. Appliquez immédiatement les correctifs disponibles. Vérifiez les journaux d'audit Entra ID et Microsoft Defender. Activez les alertes dans Microsoft Sentinel si disponible sur votre tenant.`,
+    steps:["1. Vérifier le Secure Score dans Defender for Cloud","2. Appliquer le patch ou la mise à jour de sécurité","3. Analyser les journaux de connexion dans Entra ID","4. Vérifier les alertes dans Microsoft Defender XDR","5. Activer/renforcer la MFA pour les comptes impactés"],
     links:[
       {lbl:"🛡 Microsoft Secure Score", href:"https://security.microsoft.com/securescore", type:"primary"},
       {lbl:"🔍 Entra ID Sign-in logs", href:"https://entra.microsoft.com/#view/Microsoft_AAD_IAM/SignInEventsV3Blade", type:"primary"},
@@ -1877,18 +1423,18 @@ const ACTION_GUIDES = [
     match:["patch tuesday","cumulative update","windows update","kb article","security update"],
     level:"🔄 Mise à jour système",
     preconisation:`Mise à jour de sécurité Microsoft publiée. Planifiez le déploiement via Intune ou WSUS selon votre politique de gestion des appareils. Testez sur un groupe pilote avant le déploiement global.`,
-    steps:["1. Consulter le bulletin Patch Tuesday","2. Analyser les CVE corrigées","3. Tester sur ring pilote","4. Déployer sur les appareils","5. Vérifier la conformité"],
+    steps:["1. Consulter le bulletin Patch Tuesday Microsoft","2. Analyser les CVE corrigées (priorité critique/important)","3. Tester sur ring pilote via Intune Update Rings","4. Déployer sur les appareils Canopé dans les 72h","5. Vérifier la conformité dans le tableau de bord Intune"],
     links:[
-      {lbl:"📱 Intune Update Rings", href:"https://intune.microsoft.com/", type:"primary"},
+      {lbl:"📱 Intune Update Rings", href:"https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppleDeviceEnrollmentHeader/~/windowsUpdateRings", type:"primary"},
       {lbl:"📋 Bulletin Patch Tuesday", href:"https://msrc.microsoft.com/update-guide/", type:"primary"},
-      {lbl:"🔍 Rapport conformité Intune", href:"https://intune.microsoft.com/", type:"sec"},
+      {lbl:"🔍 Rapport conformité Intune", href:"https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/compliance", type:"sec"},
     ]
   },
   {
     match:["copilot","microsoft 365 copilot","copilot studio","copilot agent"],
     level:"✨ Fonctionnalité IA",
-    preconisation:`Nouvelle fonctionnalité Copilot disponible ou en cours de déploiement. Évaluez la pertinence pour le tenant, vérifiez les prérequis de licence et les paramètres de confidentialité avant activation.`,
-    steps:["1. Vérifier les licences Copilot","2. Contrôler les paramètres de confidentialité","3. Activer pour un groupe pilote","4. Former les utilisateurs pilotes","5. Évaluer avant déploiement global"],
+    preconisation:`Nouvelle fonctionnalité Copilot disponible ou en cours de déploiement. Évaluez la pertinence pour le tenant Canopé, vérifiez les prérequis de licence et les paramètres de confidentialité des données avant activation.`,
+    steps:["1. Vérifier les licences Copilot disponibles sur le tenant","2. Contrôler les paramètres de confidentialité des données","3. Activer pour un groupe pilote (early adopters)","4. Former les utilisateurs pilotes","5. Évaluer avant déploiement global"],
     links:[
       {lbl:"✨ Admin Copilot M365", href:"https://admin.microsoft.com/Adminportal/Home#/copilot", type:"primary"},
       {lbl:"📚 Docs Copilot M365", href:"https://learn.microsoft.com/fr-fr/copilot/microsoft-365/", type:"sec"},
@@ -1898,8 +1444,8 @@ const ACTION_GUIDES = [
   {
     match:["sharepoint","spfx","sharepoint framework"],
     level:"📁 SharePoint Online",
-    preconisation:`Changement impactant SharePoint Online ou SPFx. Vérifiez l'impact sur les sites, les WebParts personnalisés et les flux Power Automate liés à SharePoint.`,
-    steps:["1. Auditer les sites SharePoint impactés","2. Vérifier la compatibilité SPFx","3. Tester sur un site pilote","4. Mettre à jour la documentation","5. Informer les gestionnaires de sites"],
+    preconisation:`Changement impactant SharePoint Online ou SPFx. Vérifiez l'impact sur les sites Canopé, les WebParts personnalisés et les flux Power Automate liés à SharePoint.`,
+    steps:["1. Auditer les sites SharePoint impactés (admin.microsoft.com)","2. Vérifier la compatibilité des WebParts SPFx existants","3. Tester les modifications sur un site pilote","4. Mettre à jour la documentation des sites","5. Informer les gestionnaires de sites"],
     links:[
       {lbl:"📁 Admin SharePoint", href:"https://admin.microsoft.com/sharepoint", type:"primary"},
       {lbl:"📚 Docs SharePoint", href:"https://learn.microsoft.com/fr-fr/sharepoint/", type:"sec"},
@@ -1910,7 +1456,7 @@ const ACTION_GUIDES = [
     match:["__fallback__"],
     level:"📋 Vérification requise",
     preconisation:`Cette notification requiert votre attention. Consultez le Message Center de votre tenant Microsoft 365 pour les détails spécifiques à votre organisation et suivez les recommandations officielles Microsoft.`,
-    steps:["1. Ouvrir le Message Center","2. Rechercher le message correspondant","3. Lire les détails","4. Planifier l'action","5. Valider la mise en conformité"],
+    steps:["1. Ouvrir le Message Center dans l'admin center","2. Rechercher le message correspondant (numéro MC)","3. Lire les détails et la date limite","4. Planifier l'action selon vos priorités","5. Valider la mise en conformité"],
     links:[
       {lbl:"📬 Message Center", href:"https://admin.microsoft.com/Adminportal/Home#/MessageCenter", type:"primary"},
       {lbl:"🛡 Admin Center M365", href:"https://admin.microsoft.com/", type:"sec"},
@@ -2019,34 +1565,68 @@ function drawActionsList() {
 
     const lvlBlock = document.createElement("div");
     lvlBlock.className = "action-block";
-    lvlBlock.innerHTML = `<div class="action-block-title">Niveau d'action</div><div class="action-block-body"><strong style="color:#835b00">${guide.level}</strong></div>`;
+
+    const lvlT = document.createElement("div");
+    lvlT.className = "action-block-title";
+    lvlT.textContent = "NIVEAU D'ACTION";
+
+    const lvlV = document.createElement("div");
+    lvlV.className = "action-block-body";
+    lvlV.innerHTML = '<strong style="color:#ffc107;font-size:12px">'+guide.level+'</strong>';
+
+    lvlBlock.appendChild(lvlT);
+    lvlBlock.appendChild(lvlV);
     card.appendChild(lvlBlock);
 
     if (item.summary) {
       const sumBlock = document.createElement("div");
       sumBlock.className = "action-block";
-      sumBlock.innerHTML = `<div class="action-block-title">Contexte</div><div class="action-block-body">${item.summary}</div>`;
+
+      const sumT = document.createElement("div");
+      sumT.className = "action-block-title";
+      sumT.textContent = "CONTEXTE (source : "+item.source+")";
+
+      const sumV = document.createElement("div");
+      sumV.className = "action-block-body";
+      sumV.textContent = item.summary;
+
+      sumBlock.appendChild(sumT);
+      sumBlock.appendChild(sumV);
       card.appendChild(sumBlock);
     }
 
     const precoBlock = document.createElement("div");
     precoBlock.className = "action-block";
-    precoBlock.innerHTML = `<div class="action-block-title">Préconisation officielle</div><div class="action-block-body">${guide.preconisation}</div>`;
+    precoBlock.style.borderColor = "rgba(0,168,168,.2)";
+
+    const precoT = document.createElement("div");
+    precoT.className = "action-block-title";
+    precoT.textContent = "📋 PRÉCONISATION OFFICIELLE";
+    precoT.style.color = "var(--teal2)";
+
+    const precoV = document.createElement("div");
+    precoV.className = "action-block-body";
+    precoV.textContent = guide.preconisation;
+
+    precoBlock.appendChild(precoT);
+    precoBlock.appendChild(precoV);
     card.appendChild(precoBlock);
 
     const stepsBlock = document.createElement("div");
     stepsBlock.className = "action-block";
-    const stepsTitle = document.createElement("div");
-    stepsTitle.className = "action-block-title";
-    stepsTitle.textContent = "Étapes à suivre";
-    stepsBlock.appendChild(stepsTitle);
+
+    const stepsT = document.createElement("div");
+    stepsT.className = "action-block-title";
+    stepsT.textContent = "✅ ÉTAPES À SUIVRE";
+    stepsBlock.appendChild(stepsT);
 
     guide.steps.forEach(s=>{
       const row = document.createElement("div");
-      row.style.cssText="font-size:11px;color:var(--mu);padding:3px 0;line-height:1.5;border-bottom:1px solid var(--b1);padding-bottom:5px;margin-bottom:4px";
+      row.style.cssText="font-size:11px;color:#9ba4c9;padding:3px 0;line-height:1.5;border-bottom:1px solid var(--b1);padding-bottom:5px;margin-bottom:4px";
       row.textContent = s;
       stepsBlock.appendChild(row);
     });
+
     card.appendChild(stepsBlock);
 
     const linksRow = document.createElement("div");
@@ -2079,12 +1659,13 @@ function updateActionsBtn() {
   const cnt = allNews.filter(n=>n.actionRequired).length;
   const el = document.getElementById("actCnt");
   if (el) el.textContent = cnt;
+  const btn = document.getElementById("btnActions");
+  if (btn) btn.style.display = "flex";
 }
 
 // Init
 drawSvcCards();
 updateFeedLabel();
-setViewMode("presse");
 window.addEventListener("load", ()=>startScan());
 </script>
 </body>
